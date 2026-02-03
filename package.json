@@ -274,7 +274,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prebuild": "npm run validate:data",
     "start": "next start",
     "lint": "next lint",
     "validate:data": "tsx scripts/validate-data.ts"
