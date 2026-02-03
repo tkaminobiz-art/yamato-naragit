@@ -4,19 +4,16 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Home, TrendingUp, Calendar } from 'lucide-react';
 import { BuildingPlan, calculateMonthlyPayment, calculateTotalPrice } from '@/data/building_plans';
+import Link from 'next/link';
 
 interface PropertyPlanCardProps {
     landPrice: number; // 土地価格（万円）
     recommendedPlans: BuildingPlan[]; // 推奨プラン
-    onInquiry?: () => void; // 問い合わせボタンのコールバック
-    onRequestDocument?: () => void; // 資料請求ボタンのコールバック
 }
 
 export default function PropertyPlanCard({
     landPrice,
-    recommendedPlans,
-    onInquiry,
-    onRequestDocument
+    recommendedPlans
 }: PropertyPlanCardProps) {
     const [selectedPlanIndex, setSelectedPlanIndex] = useState(0);
 
@@ -50,8 +47,8 @@ export default function PropertyPlanCard({
                             key={plan.id}
                             onClick={() => setSelectedPlanIndex(index)}
                             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${index === selectedPlanIndex
-                                    ? 'bg-amber-600 text-white shadow-md'
-                                    : 'bg-white text-gray-600 hover:bg-amber-50'
+                                ? 'bg-amber-600 text-white shadow-md'
+                                : 'bg-white text-gray-600 hover:bg-amber-50'
                                 }`}
                         >
                             {plan.series} {plan.tsubo}坪 {plan.layout}
@@ -153,18 +150,18 @@ export default function PropertyPlanCard({
 
                     {/* CTAボタン */}
                     <div className="grid grid-cols-2 gap-3">
-                        <button
-                            onClick={onInquiry}
-                            className="px-4 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-xl font-semibold text-sm transition-all shadow-md hover:shadow-lg"
+                        <Link
+                            href="/contact"
+                            className="px-4 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-xl font-semibold text-sm transition-all shadow-md hover:shadow-lg text-center"
                         >
                             💬 詳しく相談する
-                        </button>
-                        <button
-                            onClick={onRequestDocument}
-                            className="px-4 py-3 bg-white hover:bg-gray-50 text-gray-900 rounded-xl font-semibold text-sm transition-all border-2 border-gray-200 hover:border-amber-300"
+                        </Link>
+                        <Link
+                            href="/contact"
+                            className="px-4 py-3 bg-white hover:bg-gray-50 text-gray-900 rounded-xl font-semibold text-sm transition-all border-2 border-gray-200 hover:border-amber-300 text-center"
                         >
                             📄 資料請求
-                        </button>
+                        </Link>
                     </div>
 
                     {/* 注釈 */}

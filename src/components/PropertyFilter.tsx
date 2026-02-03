@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Filter, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -53,6 +53,19 @@ const STATIONS = [
 
 export function PropertyFilter({ filterValues, onChange, resultCount }: PropertyFilterProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(false);
+
+    useEffect(() => {
+        // クライアントサイドでのみ実行
+        const checkDesktop = () => {
+            setIsDesktop(window.innerWidth >= 768);
+        };
+
+        checkDesktop();
+        window.addEventListener('resize', checkDesktop);
+
+        return () => window.removeEventListener('resize', checkDesktop);
+    }, []);
 
     const handleReset = () => {
         onChange({
@@ -91,7 +104,7 @@ export function PropertyFilter({ filterValues, onChange, resultCount }: Property
 
                 {/* フィルターパネル */}
                 <AnimatePresence>
-                    {(isOpen || window.innerWidth >= 768) && (
+                    {(isOpen || isDesktop) && (
                         <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}

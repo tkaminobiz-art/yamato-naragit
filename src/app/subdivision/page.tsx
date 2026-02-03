@@ -209,8 +209,6 @@ export default function SubdivisionPage() {
                                             recommendedPlans={item.recommendedPlanIds
                                                 .map(id => getBuildingPlanById(id))
                                                 .filter((plan): plan is NonNullable<typeof plan> => plan !== undefined)}
-                                            onInquiry={() => window.location.href = '/contact'}
-                                            onRequestDocument={() => window.location.href = '/contact'}
                                         />
                                     )}
 
