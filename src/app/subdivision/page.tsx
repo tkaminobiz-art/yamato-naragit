@@ -179,7 +179,7 @@ export default function SubdivisionPage() {
 
                                 {/* Content Area */}
                                 <div className="p-6">
-                                    <h3 className="text-lg font-serif font-bold text-y-charcoal mb-2 group-hover:text-nara-gold transition-colors">{item.name}</h3>
+                                    <h3 className="text-lg font-serif font-bold text-y-charcoal mb-2 group-hover:text-nara-gold transition-colors line-clamp-2">{item.name}</h3>
 
                                     <div className="space-y-3 mb-6">
                                         <div className="flex items-start gap-3 text-sm text-gray-600">

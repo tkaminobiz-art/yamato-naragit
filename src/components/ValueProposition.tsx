@@ -7,7 +7,7 @@ import { ArrowRight, Check, Shield, Zap, Droplets, Hammer, Bath } from "lucide-r
 
 export function ValueProposition() {
     return (
-        <section className="py-24 px-6 bg-white relative overflow-hidden">
+        <section className="py-16 md:py-24 lg:py-32 px-6 bg-white relative overflow-hidden">
             <div className="container mx-auto max-w-7xl">
                 {/* 1. Narrative Intro - "Gap-Free" & "Risk Reversal" */}
                 <div className="flex flex-col lg:flex-row items-start gap-16 mb-24">

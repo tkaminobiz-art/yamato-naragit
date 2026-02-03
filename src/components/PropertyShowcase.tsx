@@ -15,7 +15,7 @@ export function PropertyShowcase() {
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
     return (
-        <section ref={ref} className="py-20 bg-y-off-white">
+        <section ref={ref} className="py-16 md:py-20 lg:py-24 bg-y-off-white">
             {/* Section Header */}
             <div className="container mx-auto px-6 mb-16 flex items-end justify-between">
                 <div>

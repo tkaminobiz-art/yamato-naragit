@@ -36,7 +36,7 @@ const merits = [
 
 export function WhyYamato() {
     return (
-        <section className="py-24 px-6 bg-y-off-white relative">
+        <section className="py-16 md:py-24 lg:py-32 px-6 bg-y-off-white relative">
             <div className="container mx-auto max-w-7xl">
                 {/* Header */}
                 <div className="text-center mb-16">

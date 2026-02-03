@@ -6,7 +6,7 @@ import { MapPin, ArrowRight } from "lucide-react";
 
 export function LandSearchCTA() {
     return (
-        <section className="py-24 bg-y-charcoal text-white relative overflow-hidden">
+        <section className="py-16 md:py-24 lg:py-32 bg-y-charcoal text-white relative overflow-hidden">
             {/* Background Map/Texture Effect */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cartographer.png')] mix-blend-overlay" />
