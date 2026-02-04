@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* 日本語の改行制御用: Chrome 119+ */
+    .text-auto-phrase {
+        word-break: auto-phrase;
+        overflow-wrap: anywhere;
+    }
+
+    /* 単語単位での改行（強制） */
+    .text-keep-all {
+        word-break: keep-all;
+        overflow-wrap: normal;
+    }
+
+    /* 泣き別れ防止のためのインラインブロック */
+    .ib {
+        display: inline-block;
+    }
+}
+
 :root {
     --background: #F9F9F9;
     --foreground: #333333;

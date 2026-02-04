@@ -20,28 +20,28 @@ export function ValueProposition() {
                             className="text-nara-charcoal"
                         >
                             <span className="block text-xs font-sans tracking-[0.2em] text-nara-gold mb-6 font-bold">OUR PHILOSOPHY</span>
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-balance leading-tight heading-spacing">
-                                「オプション」という言葉をなくしました。
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-balance leading-tight heading-spacing text-auto-phrase">
+                                <span className="ib">「オプション」という言葉を</span><span className="ib">なくしました。</span>
                             </h2>
-                            <div className="max-w-prose">
+                            <div className="max-w-prose text-auto-phrase">
                                 <p className="font-serif leading-relaxed text-gray-700 paragraph-spacing">
-                                    一般的なハウスメーカーでは、契約後に「あれもオプション、これもオプション」と追加費用が積み上がっていくことが常識とされています。
+                                    一般的なハウスメーカーでは、契約後に「あれも<span className="ib">オプション、</span>これも<span className="ib">オプション」と</span><span className="ib">追加費用が</span>積み上がっていくことが常識とされています。
                                 </p>
 
                                 <p className="font-serif text-lg font-bold text-nara-charcoal paragraph-spacing">
-                                    しかし、やまと不動産は違います。
+                                    しかし、<span className="ib">やまと不動産は</span><span className="ib">違います。</span>
                                 </p>
 
                                 <p className="font-serif leading-relaxed text-gray-700 paragraph-spacing">
-                                    私たちは、プロが選ぶ「最高グレードの設備」を最初から標準にしました。ステンレスキッチンの「ステディア」、制震ダンパー「MIRAIE」、そして37mm厚の「ヘーベルパワーボード」。
+                                    私たちは、<span className="ib">プロが選ぶ</span><span className="ib">「最高グレードの設備」を</span>最初から標準にしました。ステンレスキッチンの<span className="ib">「ステディア」、</span>制震ダンパー<span className="ib">「MIRAIE」、</span>そして37mm厚の<span className="ib">「ヘーベルパワーボード」。</span>
                                 </p>
 
                                 <p className="font-serif leading-relaxed text-gray-700 paragraph-spacing">
-                                    これら全てが、追加費用 0円。さらに、通常はお客様負担となる<span className="text-nara-gold font-bold">「地盤改良費」</span>までも会社が負担します。
+                                    これら全てが、<span className="ib">追加費用 0円。</span>さらに、通常はお客様負担となる<span className="text-nara-gold font-bold ib">「地盤改良費」</span>までも<span className="ib">会社が負担します。</span>
                                 </p>
 
                                 <p className="font-serif leading-relaxed text-gray-700 mb-8">
-                                    これが、私たちの約束する「最強の標準仕様」です。
+                                    これが、<span className="ib">私たちの約束する</span><span className="ib">「最強の標準仕様」です。</span>
                                 </p>
                             </div>
                             <Link href="/specs" className="w-full md:w-auto justify-center inline-flex items-center gap-2 bg-[#333333] text-white px-8 py-4 rounded-sm hover:bg-black transition-all shadow-xl group border border-transparent hover:border-nara-gold">

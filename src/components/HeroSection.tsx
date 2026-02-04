@@ -44,7 +44,7 @@ export function HeroSection() {
                         initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         transition={{ duration: 1.5, delay: 0.5 }}
-                        className="writing-vertical-rl text-4xl md:text-6xl lg:text-7xl font-serif tracking-[0.2em] h-[40vh] md:h-[35vh] mx-auto leading-loose drop-shadow-2xl"
+                        className="writing-vertical-rl text-4xl md:text-6xl font-serif tracking-widest md:tracking-[0.2em] h-auto whitespace-nowrap"
                     >
                         奈良の刻を、住まう。
                     </motion.div>

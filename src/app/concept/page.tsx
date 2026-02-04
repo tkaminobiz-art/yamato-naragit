@@ -42,8 +42,8 @@ export default function ConceptPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-y-charcoal text-balance leading-tight heading-spacing">
-                            「当たり前」を、最高に。
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-y-charcoal text-balance leading-tight heading-spacing text-auto-phrase">
+                            <span className="ib">「当たり前」を、</span><span className="ib">最高に。</span>
                         </h2>
                         <div className="w-16 h-[2px] bg-y-gold mx-auto mb-10 md:mb-12" />
                     </motion.div>
@@ -53,22 +53,22 @@ export default function ConceptPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="prose-yamato"
+                        className="prose-yamato text-auto-phrase"
                     >
                         <p>
-                            家づくりは、人生において最も大きな「決断」の一つです。
+                            家づくりは、<span className="ib">人生において</span><span className="ib">最も大きな</span>「決断」の一つです。
                         </p>
                         <p>
-                            しかし、これまでの住宅業界には、不明瞭な価格、複雑なオプション、そして「一生に一度だから仕方ない」という妥協が溢れていました。
+                            しかし、これまでの<span className="ib">住宅業界には、</span><span className="ib">不明瞭な価格、</span><span className="ib">複雑なオプション、</span>そして「一生に一度だから仕方ない」という<span className="ib">妥協が</span><span className="ib">溢れていました。</span>
                         </p>
                         <p>
-                            私たちは、その不透明な常識を打ち破り、本来あるべき「理想の住まい」の姿を再定義します。
+                            私たちは、その<span className="ib">不透明な常識を</span><span className="ib">打ち破り、</span>本来あるべき<span className="ib">「理想の住まい」の姿を</span><span className="ib">再定義します。</span>
                         </p>
                         <p className="font-medium text-y-charcoal text-lg">
-                            他社が「特別」と呼ぶものを、私たちは「標準」へと引き上げる。
+                            <span className="ib">他社が「特別」と</span><span className="ib">呼ぶものを、</span>私たちは<span className="ib">「標準」へと</span><span className="ib">引き上げる。</span>
                         </p>
                         <p>
-                            住まいの基準（スタンダード）を極限まで高め、奈良・京都で暮らす人々の人生に、確かな感動と調和をもたらすことが私たちの使命です。
+                            <span className="ib">住まいの基準</span>（スタンダード）を極限まで高め、奈良・京都で暮らす<span className="ib">人々の人生に、</span><span className="ib">確かな感動と</span><span className="ib">調和をもたらすことが</span><span className="ib">私たちの使命です。</span>
                         </p>
                     </motion.div>
                 </div>
@@ -97,12 +97,12 @@ export default function ConceptPage() {
                             {
                                 num: "02",
                                 title: "妥協なき標準：\n最高グレードの日常",
-                                desc: "トリプルガラス樹脂サッシ、深型食洗機、高効率給湯器。これらは贅沢品ではなく、快適な暮らしの必需品です。私たちはこれらを標準化することで、検討の初期段階から「質の高い暮らし」を確定させ、お客様の期待を超える住まいを提供します。"
+                                desc: "トリプルガラス樹脂サッシ、深型食洗機、高効率給湯器。これらは贅沢品ではなく、<span class='ib'>快適な暮らしの</span><span class='ib'>必需品です。</span>私たちは<span class='ib'>これらを標準化することで、</span>検討の初期段階から<span class='ib'>「質の高い暮らし」を</span><span class='ib'>確定させ、</span>お客様の<span class='ib'>期待を超える</span><span class='ib'>住まいを</span><span class='ib'>提供します。</span>"
                             },
                             {
                                 num: "03",
                                 title: "徹底した伴走：\nチームやまと",
-                                desc: "家づくりにおける不安や悩みは、一つとして同じものはありません。だからこそ、私たちは打ち合わせ回数に制限を設けません。代表取締役専務の小林 敬昌を筆頭に、経験豊富なプロフェッショナルたちが、お客様が心から納得されるまで何度でも対話を重ね、理想を形にします。"
+                                desc: "家づくりにおける<span class='ib'>不安や悩みは、</span>一つとして<span class='ib'>同じものはありません。</span>だからこそ、私たちは打ち合わせ回数に<span class='ib'>制限を設けません。</span>代表取締役専務の<span class='ib'>小林 敬昌を筆頭に、</span>経験豊富な<span class='ib'>プロフェッショナルたちが、</span>お客様が<span class='ib'>心から納得されるまで</span><span class='ib'>何度でも対話を重ね、</span><span class='ib'>理想を形にします。</span>"
                             }
                         ].map((policy, idx) => (
                             <motion.div
@@ -119,9 +119,7 @@ export default function ConceptPage() {
                                 <h3 className="text-xl font-serif text-y-charcoal font-bold mb-6 mt-4 whitespace-pre-line leading-relaxed">
                                     {policy.title}
                                 </h3>
-                                <p className="text-gray-600 font-serif leading-relaxed text-sm">
-                                    {policy.desc}
-                                </p>
+                                <p className="text-gray-600 font-serif leading-relaxed text-sm text-auto-phrase" dangerouslySetInnerHTML={{ __html: policy.desc }} />
                             </motion.div>
                         ))}
                     </div>

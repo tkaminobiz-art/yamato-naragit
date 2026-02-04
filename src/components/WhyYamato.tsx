@@ -7,19 +7,19 @@ const merits = [
     {
         icon: <MapPin size={32} />,
         title: "「土地難民」にならない",
-        desc: "常時150区画の自社分譲地を保有。土地探しの迷路から即座に脱出。",
+        desc: "常時150区画の<span class='ib'>自社分譲地を保有。</span><br /><span class='ib'>土地探しの迷路から</span><span class='ib'>即座に脱出。</span>",
         delay: 0.1
     },
     {
         icon: <Wallet size={32} />,
-        title: "「予算オーバー」がない",
-        desc: "地盤改良費を全額会社負担。資金計画が狂う恐怖を排除。",
+        title: "「予算オーバー」の不安ゼロ",
+        desc: "「31坪 2,080万円〜」の<span class='ib'>明瞭価格。</span><br /><span class='ib'>不透明な追加費用を</span><span class='ib'>徹底排除。</span>",
         delay: 0.2
     },
     {
         icon: <Gauge size={32} />,
-        title: "「実物との落差」がない",
-        desc: "最初からプロ仕様の設備が標準。追加費用のない正当な家づくり。",
+        title: "地震に負けない「最高等級3」",
+        desc: "全棟が<span class='ib'>耐震等級3</span>相当。<br />制震ダンパー<span class='ib'>「MIRAIE」も</span><span class='ib'>標準装備。</span>",
         delay: 0.3
     },
     {
@@ -43,8 +43,8 @@ export function WhyYamato() {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-nara-gold font-bold tracking-[0.2em] text-sm block mb-4">SMART CHOICE</span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-nara-charcoal text-balance leading-tight">
-                            なぜ、やまと不動産で建てるのか。
+                        <h2 className="text-3xl md:text-5xl font-serif text-y-charcoal text-balance leading-tight heading-spacing text-auto-phrase">
+                            なぜ、<span className="ib">やまと不動産で</span><span className="ib">建てるのか。</span>
                         </h2>
                         <p className="text-xl md:text-2xl text-gray-600 mt-4 md:mt-6 font-serif">
                             失敗しないための「4つの根拠」
@@ -54,24 +54,22 @@ export function WhyYamato() {
 
                 {/* Grid (Desktop) / Horizontal Scroll (Mobile) */}
                 <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide">
-                    {merits.map((item, idx) => (
+                    {merits.map((reason, idx) => (
                         <motion.div
                             key={idx}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: item.delay }}
+                            transition={{ duration: 0.6, delay: reason.delay }}
                             className="flex-shrink-0 w-[85vw] md:w-auto snap-center bg-white p-8 rounded-sm shadow-lg border-t-4 border-nara-gold hover:translate-y-[-5px] transition-transform duration-300"
                         >
                             <div className="text-nara-charcoal mb-6 bg-nara-paper w-16 h-16 rounded-full flex items-center justify-center mx-auto md:mx-0">
-                                {item.icon}
+                                {reason.icon}
                             </div>
                             <h3 className="text-xl font-serif font-bold text-nara-charcoal mb-4 text-center md:text-left leading-snug">
-                                {item.title}
+                                {reason.title}
                             </h3>
-                            <p className="text-sm text-gray-600 leading-relaxed font-serif text-center md:text-left">
-                                {item.desc}
-                            </p>
+                            <p className="text-gray-600 font-serif leading-relaxed text-sm text-auto-phrase" dangerouslySetInnerHTML={{ __html: reason.desc }} />
                         </motion.div>
                     ))}
                 </div>

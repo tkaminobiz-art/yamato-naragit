@@ -23,16 +23,16 @@ export function LandSearchCTA() {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-nara-gold text-xs tracking-[0.2em] font-sans font-bold block mb-4">LAND INFORMATION</span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-balance leading-tight heading-spacing">
-                            理想の土地は、ネットにはない。
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-balance leading-tight heading-spacing text-auto-phrase">
+                            <span className="ib">理想の土地は、</span><span className="ib">ネットにはない。</span>
                         </h2>
                         <div className="w-16 h-px bg-nara-gold mb-6 md:mb-8" />
-                        <div className="max-w-prose">
+                        <div className="max-w-prose text-auto-phrase">
                             <p className="font-serif text-gray-300 leading-relaxed paragraph-spacing">
-                                やまと不動産は、奈良県内に150区画以上の自社分譲地を保有しています。
+                                <span className="ib">やまと不動産は、</span>奈良県内に150区画以上の<span className="ib">自社分譲地を</span><span className="ib">保有しています。</span>
                             </p>
                             <p className="font-serif text-gray-300 leading-relaxed mb-8">
-                                その多くは、WEB公開前に決まってしまう希少な土地。まずは「会員限定」の自社物件リストをご覧ください。
+                                <span className="ib">その多くは、</span>WEB公開前に決まってしまう<span className="ib">希少な土地。</span><span className="ib">まずは</span>「会員限定」の<span className="ib">自社物件リストを</span><span className="ib">ご覧ください。</span>
                             </p>
                         </div>
 
