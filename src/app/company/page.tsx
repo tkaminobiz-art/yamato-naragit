@@ -86,7 +86,7 @@ export default function CompanyPage() {
                         <div className="group text-center">
                             <div className="relative aspect-[3/4] w-full max-w-sm mx-auto mb-8 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80"
+                                    src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80"
                                     alt="古谷 泰彦"
                                     fill
                                     className="object-cover"
@@ -101,7 +101,7 @@ export default function CompanyPage() {
                         <div className="group text-center">
                             <div className="relative aspect-[3/4] w-full max-w-sm mx-auto mb-8 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80"
+                                    src="https://images.unsplash.com/photo-1542596594-649edbc13630?auto=format&fit=crop&q=80"
                                     alt="小林 敬昌"
                                     fill
                                     className="object-cover"
