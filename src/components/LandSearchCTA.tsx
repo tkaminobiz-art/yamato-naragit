@@ -2,77 +2,104 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { MapPin, ArrowRight } from "lucide-react";
+import { ArrowRight, Lock, Map } from "lucide-react";
 
 export function LandSearchCTA() {
     return (
-        <section className="section-spacing bg-y-charcoal text-white relative overflow-hidden">
-            {/* Background Map/Texture Effect */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cartographer.png')] mix-blend-overlay" />
+        <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden text-white">
+            {/* Background Image with Heavy Overlay */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80')] bg-cover bg-center" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/60" />
             </div>
 
-            <div className="container mx-auto max-w-6xl px-6 relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                {/* Text Content */}
-                <div className="md:w-1/2">
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <span className="text-nara-gold text-xs tracking-[0.2em] font-sans font-bold block mb-4">LAND INFORMATION</span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-balance leading-tight heading-spacing text-auto-phrase">
-                            <span className="ib">理想の土地は、</span><span className="ib">ネットにはない。</span>
+                {/* Left: Copywriting */}
+                <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="space-y-8"
+                >
+                    <div>
+                        <span className="text-nara-gold text-xs tracking-[0.3em] font-serif font-bold block mb-4">LAND INFORMATION</span>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-balance leading-tight tracking-wide">
+                            理想の土地は、<br />
+                            <span className="text-gray-400">ネットにはない。</span>
                         </h2>
-                        <div className="w-16 h-px bg-nara-gold mb-6 md:mb-8" />
-                        <div className="max-w-prose text-auto-phrase">
-                            <p className="font-serif text-gray-300 leading-relaxed paragraph-spacing">
-                                <span className="ib">やまと不動産は、</span>奈良県内に150区画以上の<span className="ib">自社分譲地を</span><span className="ib">保有しています。</span>
-                            </p>
-                            <p className="font-serif text-gray-300 leading-relaxed mb-8">
-                                <span className="ib">その多くは、</span>WEB公開前に決まってしまう<span className="ib">希少な土地。</span><span className="ib">まずは</span>「会員限定」の<span className="ib">自社物件リストを</span><span className="ib">ご覧ください。</span>
-                            </p>
-                        </div>
+                    </div>
 
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href="/subdivision" className="group inline-flex items-center justify-center gap-3 bg-white text-y-charcoal px-8 py-4 rounded-sm hover:bg-nara-gold hover:text-white transition-all duration-300">
-                                <MapPin size={18} />
-                                <span className="font-serif tracking-widest text-sm font-bold">自社分譲地を見る</span>
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                        </div>
-                    </motion.div>
-                </div>
+                    <div className="space-y-6 font-serif text-gray-300 leading-loose text-sm md:text-base max-w-lg">
+                        <p>
+                            良い土地情報が、インターネットに出回ることは<br className="hidden md:inline" />
+                            滅多にありません。なぜなら、公開する前に<br className="hidden md:inline" />
+                            <span className="text-white border-b border-nara-gold pb-1">「待っている人」</span>だけで決まってしまうから。
+                        </p>
+                        <p>
+                            やまと不動産は、奈良県内に<span className="text-white text-lg mx-1">150</span>区画以上の<br />
+                            自社分譲地（未公開）を保有しています。
+                        </p>
+                    </div>
 
-                {/* Visual / Abstract Card */}
-                <div className="md:w-1/2 w-full">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="relative h-[400px] w-full rounded-sm overflow-hidden group border border-white/10"
-                    >
-                        {/* Image */}
-                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542367523-2804b4d61899?auto=format&fit=crop&q=80')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" />
-                        <div className="absolute inset-0 bg-y-charcoal/40 group-hover:bg-y-charcoal/20 transition-colors" />
+                    <div className="pt-4">
+                        <Link
+                            href="/subdivision"
+                            className="group relative inline-flex items-center gap-4 px-8 py-4 bg-transparent border border-white/30 overflow-hidden hover:border-nara-gold/50 transition-colors duration-500"
+                        >
+                            <span className="absolute inset-0 bg-white/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                            <Map className="w-5 h-5 text-nara-gold z-10" />
+                            <span className="font-serif text-white tracking-widest z-10 group-hover:text-nara-gold transition-colors">
+                                非公開物件を見る
+                            </span>
+                            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 group-hover:text-nara-gold transition-all z-10" />
+                        </Link>
+                    </div>
+                </motion.div>
 
-                        {/* Overlay Text */}
-                        <div className="absolute bottom-8 left-8 right-8">
-                            <div className="bg-white/90 backdrop-blur-sm p-6 rounded-sm shadow-xl">
-                                <div className="flex justify-between items-end">
-                                    <div>
-                                        <p className="text-xs text-gray-500 mb-1 font-sans tracking-widest">LATEST UPDATE</p>
-                                        <p className="text-xl font-serif font-bold text-y-charcoal">学園前・登美ヶ丘エリア</p>
-                                    </div>
-                                    <span className="text-nara-gold font-bold font-serif text-lg">公開中</span>
-                                </div>
+                {/* Right: Visual "Secret" Element */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="relative"
+                >
+                    {/* Glass Card */}
+                    <div className="relative aspect-[4/3] bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-md rounded-sm border border-white/10 p-8 flex flex-col items-center justify-center group overflow-hidden">
+
+                        {/* Background blurred map/list hint */}
+                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20 blur-sm group-hover:scale-110 transition-transform duration-1000" />
+
+                        <div className="relative z-10 flex flex-col items-center text-center space-y-6">
+                            <div className="w-16 h-16 rounded-full bg-[#0a0a0a] border border-nara-gold/30 flex items-center justify-center shadow-2xl group-hover:border-nara-gold transition-colors duration-500">
+                                <Lock className="w-6 h-6 text-nara-gold" />
+                            </div>
+
+                            <div>
+                                <p className="text-nara-gold text-xs tracking-[0.2em] mb-2 font-serif">MEMBERS ONLY</p>
+                                <h3 className="text-2xl font-serif text-white mb-2">会員限定リスト</h3>
+                                <p className="text-gray-400 text-xs font-serif tracking-in-expand">
+                                    一般には公開されない「水面下の情報」
+                                </p>
+                            </div>
+
+                            <div className="flex gap-2 text-xs text-gray-500 font-sans tracking-widest border-t border-white/10 pt-6 mt-2">
+                                <span>GAKUEN-MAE</span>
+                                <span>•</span>
+                                <span>TOMIGAOKA</span>
+                                <span>•</span>
+                                <span>AYAMEIKE</span>
                             </div>
                         </div>
-                    </motion.div>
-                </div>
+                    </div>
+
+                    {/* Decorative Elements */}
+                    <div className="absolute -top-4 -right-4 w-24 h-24 border-t border-r border-nara-gold/20" />
+                    <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b border-l border-nara-gold/20" />
+                </motion.div>
+
             </div>
         </section>
     );
