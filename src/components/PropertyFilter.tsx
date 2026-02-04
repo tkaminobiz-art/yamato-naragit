@@ -80,7 +80,7 @@ export function PropertyFilter({ filterValues, onChange, resultCount }: Property
     };
 
     return (
-    return (
+
         <>
             {/* Filter Trigger Button */}
             <div className="flex justify-end container mx-auto px-6 py-8">
