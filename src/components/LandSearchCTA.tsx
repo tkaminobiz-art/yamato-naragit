@@ -6,7 +6,7 @@ import { MapPin, ArrowRight } from "lucide-react";
 
 export function LandSearchCTA() {
     return (
-        <section className="py-16 md:py-24 lg:py-32 bg-y-charcoal text-white relative overflow-hidden">
+        <section className="section-spacing bg-y-charcoal text-white relative overflow-hidden">
             {/* Background Map/Texture Effect */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cartographer.png')] mix-blend-overlay" />
@@ -23,16 +23,18 @@ export function LandSearchCTA() {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-nara-gold text-xs tracking-[0.2em] font-sans font-bold block mb-4">LAND INFORMATION</span>
-                        <h2 className="text-3xl md:text-5xl font-serif mb-6 leading-tight">
-                            理想の土地は、<br />
-                            ネットにはない。
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-balance leading-tight heading-spacing">
+                            理想の土地は、ネットにはない。
                         </h2>
-                        <div className="w-16 h-px bg-nara-gold mb-8" />
-                        <p className="font-serif text-gray-400 leading-loose mb-8">
-                            やまと不動産は、奈良県内に150区画以上の自社分譲地を保有しています。<br />
-                            その多くは、WEB公開前に決まってしまう希少な土地。<br />
-                            まずは「会員限定」の自社物件リストをご覧ください。
-                        </p>
+                        <div className="w-16 h-px bg-nara-gold mb-6 md:mb-8" />
+                        <div className="max-w-prose">
+                            <p className="font-serif text-gray-300 leading-relaxed paragraph-spacing">
+                                やまと不動産は、奈良県内に150区画以上の自社分譲地を保有しています。
+                            </p>
+                            <p className="font-serif text-gray-300 leading-relaxed mb-8">
+                                その多くは、WEB公開前に決まってしまう希少な土地。まずは「会員限定」の自社物件リストをご覧ください。
+                            </p>
+                        </div>
 
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link href="/subdivision" className="group inline-flex items-center justify-center gap-3 bg-white text-y-charcoal px-8 py-4 rounded-sm hover:bg-nara-gold hover:text-white transition-all duration-300">

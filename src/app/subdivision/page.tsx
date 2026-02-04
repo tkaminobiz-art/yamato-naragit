@@ -136,7 +136,7 @@ export default function SubdivisionPage() {
             />
 
             {/* List Section */}
-            <section className="py-16 px-4 md:px-6">
+            <section className="section-spacing px-4 md:px-6">
                 <div className="container mx-auto max-w-6xl">
                     <div className="mb-8 flex flex-col md:flex-row justify-between items-end gap-4 border-b border-gray-200 pb-4">
                         <div>

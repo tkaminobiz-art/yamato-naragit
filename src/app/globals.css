@@ -15,3 +15,38 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+@layer components {
+
+    /* カスタムプロースクラス - 読みやすさを最優先 */
+    .prose-yamato {
+        @apply max-w-prose mx-auto;
+    }
+
+    .prose-yamato p {
+        @apply leading-relaxed mb-4 md:mb-6 text-gray-700;
+    }
+
+    .prose-yamato h2 {
+        @apply text-balance leading-tight mb-6 md:mb-8 text-y-charcoal font-serif;
+    }
+
+    .prose-yamato h3 {
+        @apply text-balance leading-snug mb-4 md:mb-6 text-y-charcoal font-serif;
+    }
+
+    /* セクション用のスペーシングユーティリティ */
+    .section-spacing {
+        @apply py-20 md:py-28 lg:py-36;
+    }
+
+    /* 見出し用のスペーシング */
+    .heading-spacing {
+        @apply mb-6 md:mb-8;
+    }
+
+    /* 段落用のスペーシング */
+    .paragraph-spacing {
+        @apply mb-4 md:mb-6;
+    }
+}

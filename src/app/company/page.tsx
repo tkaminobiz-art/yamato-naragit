@@ -31,7 +31,7 @@ export default function CompanyPage() {
             </section>
 
             {/* Message Section */}
-            <section className="container mx-auto px-6 py-24 max-w-4xl">
+            <section className="container mx-auto px-6 section-spacing max-w-4xl">
                 <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="md:w-1/3">
                         <div className="aspect-[3/4] relative bg-gray-200 rounded-sm overflow-hidden shadow-lg">
@@ -82,7 +82,7 @@ export default function CompanyPage() {
             </section>
 
             {/* Staff Section */}
-            <section className="bg-white py-24">
+            <section className="bg-white section-spacing">
                 <div className="container mx-auto px-6 max-w-6xl">
                     <h2 className="text-center text-3xl font-serif text-y-charcoal mb-16 tracking-widest">
                         スタッフ紹介
@@ -141,7 +141,7 @@ export default function CompanyPage() {
             </section>
 
             {/* Company Outline */}
-            <section className="container mx-auto px-6 py-24 max-w-4xl">
+            <section className="container mx-auto px-6 section-spacing max-w-4xl">
                 <h2 className="text-center text-3xl font-serif text-y-charcoal mb-16 tracking-widest">
                     会社概要
                 </h2>

@@ -20,7 +20,7 @@ export default function SpecsPage() {
 
 function SeriesPricing() {
     return (
-        <section className="bg-nara-paper py-24 px-6 border-b border-gray-100">
+        <section className="bg-nara-paper section-spacing px-6 border-b border-gray-100">
             <div className="container mx-auto max-w-5xl">
                 <div className="text-center mb-16">
                     <h2 className="text-2xl md:text-3xl font-serif text-nara-charcoal mb-6">
@@ -180,7 +180,7 @@ function HighGradeFeatures() {
     ];
 
     return (
-        <section className="py-24 container mx-auto px-4">
+        <section className="section-spacing container mx-auto px-4">
             <h2 className="text-center text-3xl font-serif text-nara-charcoal mb-16">
                 暮らしを変える、5つのハイグレード標準
             </h2>
@@ -219,7 +219,7 @@ function HighGradeFeatures() {
 
 function PriceComparison() {
     return (
-        <section className="bg-gray-50 py-24 px-4 overflow-hidden">
+        <section className="bg-gray-50 section-spacing px-4 overflow-hidden">
             <div className="container mx-auto max-w-4xl">
                 <h2 className="text-center text-3xl font-serif text-nara-charcoal mb-12">
                     結局、いくらお得なのか？
@@ -270,7 +270,7 @@ function PriceComparison() {
 
 function Philosophy() {
     return (
-        <section className="py-24 container mx-auto px-4 text-center">
+        <section className="section-spacing container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto space-y-8 bg-white p-12 shadow-sm border border-gray-100 rounded-lg">
                 <h2 className="text-2xl md:text-3xl font-serif text-nara-charcoal">
                     私たちは、家づくりに「誠実」でありたい。

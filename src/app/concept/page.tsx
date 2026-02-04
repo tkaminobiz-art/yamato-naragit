@@ -34,7 +34,7 @@ export default function ConceptPage() {
             </section>
 
             {/* Corporate Philosophy */}
-            <section className="container mx-auto px-6 py-24 md:py-32">
+            <section className="container mx-auto px-6 section-spacing">
                 <div className="max-w-4xl mx-auto text-center space-y-12">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -42,10 +42,10 @@ export default function ConceptPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-serif text-y-charcoal leading-relaxed mb-8">
-                            「当たり前」を、<br />最高に。
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-y-charcoal text-balance leading-tight heading-spacing">
+                            「当たり前」を、最高に。
                         </h2>
-                        <div className="w-16 h-[2px] bg-y-gold mx-auto mb-12" />
+                        <div className="w-16 h-[2px] bg-y-gold mx-auto mb-10 md:mb-12" />
                     </motion.div>
 
                     <motion.div
@@ -53,39 +53,38 @@ export default function ConceptPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-gray-600 font-serif leading-loose text-justify md:text-center space-y-8"
+                        className="prose-yamato"
                     >
                         <p>
-                            家づくりは、人生において最も大きな「決断」の一つです。<br className="hidden md:inline" />
-                            しかし、これまでの住宅業界には、不明瞭な価格、複雑なオプション、そして<br className="hidden md:inline" />
-                            「一生に一度だから仕方ない」という妥協が溢れていました。
+                            家づくりは、人生において最も大きな「決断」の一つです。
                         </p>
                         <p>
-                            私たちは、その不透明な常識を打ち破り、<br className="hidden md:inline" />
-                            本来あるべき「理想の住まい」の姿を再定義します。
+                            しかし、これまでの住宅業界には、不明瞭な価格、複雑なオプション、そして「一生に一度だから仕方ない」という妥協が溢れていました。
+                        </p>
+                        <p>
+                            私たちは、その不透明な常識を打ち破り、本来あるべき「理想の住まい」の姿を再定義します。
                         </p>
                         <p className="font-medium text-y-charcoal text-lg">
                             他社が「特別」と呼ぶものを、私たちは「標準」へと引き上げる。
                         </p>
                         <p>
-                            住まいの基準（スタンダード）を極限まで高め、<br className="hidden md:inline" />
-                            奈良・京都で暮らす人々の人生に、確かな感動と調和をもたらすことが私たちの使命です。
+                            住まいの基準（スタンダード）を極限まで高め、奈良・京都で暮らす人々の人生に、確かな感動と調和をもたらすことが私たちの使命です。
                         </p>
                     </motion.div>
                 </div>
             </section>
 
             {/* Brand Policy */}
-            <section className="bg-white py-24">
+            <section className="bg-white section-spacing">
                 <div className="container mx-auto px-6 max-w-6xl">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center font-serif text-3xl md:text-4xl text-y-charcoal mb-20 tracking-widest"
+                        className="text-center font-serif text-3xl md:text-4xl lg:text-5xl text-y-charcoal text-balance leading-tight heading-spacing"
                     >
-                        Brand Policy<br />
-                        <span className="text-sm text-y-gold block mt-4 tracking-[0.2em] font-normal">3つの約束</span>
+                        Brand Policy
+                        <span className="text-sm md:text-base text-y-gold block mt-4 md:mt-6 tracking-[0.2em] font-normal">3つの約束</span>
                     </motion.h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -120,7 +119,7 @@ export default function ConceptPage() {
                                 <h3 className="text-xl font-serif text-y-charcoal font-bold mb-6 mt-4 whitespace-pre-line leading-relaxed">
                                     {policy.title}
                                 </h3>
-                                <p className="text-gray-600 font-serif leading-loose text-justify text-sm">
+                                <p className="text-gray-600 font-serif leading-relaxed text-sm">
                                     {policy.desc}
                                 </p>
                             </motion.div>

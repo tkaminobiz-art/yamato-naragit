@@ -7,7 +7,7 @@ import { ArrowRight, Check, Shield, Zap, Droplets, Hammer, Bath } from "lucide-r
 
 export function ValueProposition() {
     return (
-        <section className="py-16 md:py-24 lg:py-32 px-6 bg-white relative overflow-hidden">
+        <section className="section-spacing px-6 bg-white relative overflow-hidden">
             <div className="container mx-auto max-w-7xl">
                 {/* 1. Narrative Intro - "Gap-Free" & "Risk Reversal" */}
                 <div className="flex flex-col lg:flex-row items-start gap-16 mb-24">
@@ -20,26 +20,30 @@ export function ValueProposition() {
                             className="text-nara-charcoal"
                         >
                             <span className="block text-xs font-sans tracking-[0.2em] text-nara-gold mb-6 font-bold">OUR PHILOSOPHY</span>
-                            <h2 className="text-3xl md:text-5xl font-serif leading-relaxed mb-8">
-                                「オプション」という<br />
-                                言葉をなくしました。
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-balance leading-tight heading-spacing">
+                                「オプション」という言葉をなくしました。
                             </h2>
-                            <p className="font-serif leading-loose text-gray-600 text-justify mb-12">
-                                一般的なハウスメーカーでは、契約後に「あれもオプション、これもオプション」と<br className="hidden md:inline" />
-                                追加費用が積み上がっていくことが常識とされています。<br /><br />
+                            <div className="max-w-prose">
+                                <p className="font-serif leading-relaxed text-gray-700 paragraph-spacing">
+                                    一般的なハウスメーカーでは、契約後に「あれもオプション、これもオプション」と追加費用が積み上がっていくことが常識とされています。
+                                </p>
 
-                                <span className="text-lg font-bold text-nara-charcoal">
+                                <p className="font-serif text-lg font-bold text-nara-charcoal paragraph-spacing">
                                     しかし、やまと不動産は違います。
-                                </span><br /><br />
+                                </p>
 
-                                私たちは、プロが選ぶ「最高グレードの設備」を最初から標準にしました。<br />
-                                ステンレスキッチンの「ステディア」、制震ダンパー「MIRAIE」、<br />
-                                そして37mm厚の「ヘーベルパワーボード」。<br /><br />
+                                <p className="font-serif leading-relaxed text-gray-700 paragraph-spacing">
+                                    私たちは、プロが選ぶ「最高グレードの設備」を最初から標準にしました。ステンレスキッチンの「ステディア」、制震ダンパー「MIRAIE」、そして37mm厚の「ヘーベルパワーボード」。
+                                </p>
 
-                                これら全てが、追加費用 0円。<br />
-                                さらに、通常はお客様負担となる<span className="text-nara-gold font-bold">「地盤改良費」</span>までも会社が負担します。<br />
-                                これが、私たちの約束する「最強の標準仕様」です。
-                            </p>
+                                <p className="font-serif leading-relaxed text-gray-700 paragraph-spacing">
+                                    これら全てが、追加費用 0円。さらに、通常はお客様負担となる<span className="text-nara-gold font-bold">「地盤改良費」</span>までも会社が負担します。
+                                </p>
+
+                                <p className="font-serif leading-relaxed text-gray-700 mb-8">
+                                    これが、私たちの約束する「最強の標準仕様」です。
+                                </p>
+                            </div>
                             <Link href="/specs" className="w-full md:w-auto justify-center inline-flex items-center gap-2 bg-[#333333] text-white px-8 py-4 rounded-sm hover:bg-black transition-all shadow-xl group border border-transparent hover:border-nara-gold">
                                 <span className="font-serif tracking-widest">ハイグレード標準仕様を見る</span>
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
