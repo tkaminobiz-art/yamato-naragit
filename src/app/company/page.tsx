@@ -76,6 +76,45 @@ export default function CompanyPage() {
                 </div>
             </section>
 
+            {/* Leadership / Management Team */}
+            <section className="container mx-auto px-6 py-24 border-b border-white/5">
+                <div className="max-w-6xl mx-auto">
+                    <span className="text-nara-gold text-xs tracking-[0.2em] block mb-12 text-center">LEADERSHIP</span>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+                        {/* President */}
+                        <div className="group text-center">
+                            <div className="relative aspect-[3/4] w-full max-w-sm mx-auto mb-8 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80"
+                                    alt="古谷 泰彦"
+                                    fill
+                                    className="object-cover"
+                                />
+                                <div className="absolute inset-0 border border-nara-gold/30 scale-95 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500" />
+                            </div>
+                            <h3 className="text-sm text-nara-gold tracking-widest mb-2 font-serif">代表取締役社長</h3>
+                            <p className="text-2xl text-white font-serif tracking-widest font-bold">古谷 泰彦</p>
+                        </div>
+
+                        {/* Senior Managing Director */}
+                        <div className="group text-center">
+                            <div className="relative aspect-[3/4] w-full max-w-sm mx-auto mb-8 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80"
+                                    alt="小林 敬昌"
+                                    fill
+                                    className="object-cover"
+                                />
+                                <div className="absolute inset-0 border border-nara-gold/30 scale-95 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500" />
+                            </div>
+                            <h3 className="text-sm text-nara-gold tracking-widest mb-2 font-serif">代表取締役専務</h3>
+                            <p className="text-2xl text-white font-serif tracking-widest font-bold">小林 敬昌</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Company Profile (About Us) */}
             <section className="container mx-auto px-6 py-24 border-b border-white/5">
                 <div className="max-w-6xl mx-auto">
@@ -92,7 +131,10 @@ export default function CompanyPage() {
                                 </div>
                                 <div className="border-b border-white/10 pb-6 grid grid-cols-1 md:grid-cols-3 gap-2">
                                     <dt className="text-gray-500 text-sm tracking-widest">代表者</dt>
-                                    <dd className="col-span-2 text-white">代表取締役　古谷 泰彦</dd>
+                                    <dd className="col-span-2 text-white">
+                                        代表取締役社長　古谷 泰彦<br />
+                                        代表取締役専務　小林 敬昌
+                                    </dd>
                                 </div>
                                 <div className="border-b border-white/10 pb-6 grid grid-cols-1 md:grid-cols-3 gap-2">
                                     <dt className="text-gray-500 text-sm tracking-widest">所在地</dt>
