@@ -45,7 +45,7 @@ export function HighGradeShowcase() {
                     <span className="block text-xs md:text-sm font-sans tracking-[0.3em] text-nara-gold mb-6 font-bold">
                         HIGH BRAND SELECTION
                     </span>
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-balance leading-tight text-white mb-6">
+                    <h2 className="text-[clamp(1.875rem,4vw+1rem,3.75rem)] font-serif text-balance leading-tight text-white mb-6">
                         最強の標準仕様。
                     </h2>
                     <p className="text-gray-400 font-serif md:text-lg">
@@ -53,7 +53,7 @@ export function HighGradeShowcase() {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 auto-rows-[400px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-8 auto-rows-[400px] md:auto-rows-[400px]">
                     {specs.map((spec, idx) => (
                         <motion.div
                             key={idx}
@@ -110,12 +110,12 @@ export function HighGradeShowcase() {
                             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
                         </div>
 
-                        <div className="absolute inset-0 z-10 p-8 md:p-16 flex flex-col justify-center items-start max-w-2xl">
+                        <div className="absolute inset-0 z-10 p-[clamp(2rem,5vw+1rem,4rem)] flex flex-col justify-center items-start max-w-2xl">
                             <div className="flex items-center gap-4 mb-6">
                                 <Shield className="w-12 h-12 text-nara-gold animate-pulse" strokeWidth={1} />
                                 <span className="text-nara-gold text-sm tracking-[0.2em] font-bold">THE STRONGEST SHIELD</span>
                             </div>
-                            <h3 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
+                            <h3 className="text-[clamp(1.875rem,4vw+1rem,3rem)] font-serif font-bold text-white mb-6 leading-tight">
                                 地盤改良費、<br />
                                 <span className="text-nara-gold text-auto-phrase">100% 会社負担。</span>
                             </h3>

@@ -43,7 +43,7 @@ export function WhyYamato() {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-nara-gold font-bold tracking-[0.2em] text-sm block mb-4">SMART CHOICE</span>
-                        <h2 className="text-3xl md:text-5xl font-serif text-y-charcoal text-balance leading-tight heading-spacing text-auto-phrase">
+                        <h2 className="text-[clamp(1.875rem,4vw+1rem,3rem)] font-serif text-y-charcoal text-balance leading-tight heading-spacing text-auto-phrase">
                             なぜ、<span className="ib">やまと不動産で</span><span className="ib">建てるのか。</span>
                         </h2>
                         <p className="text-xl md:text-2xl text-gray-600 mt-4 md:mt-6 font-serif">

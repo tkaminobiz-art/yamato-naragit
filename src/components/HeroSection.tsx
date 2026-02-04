@@ -21,7 +21,7 @@ export function HeroSection() {
     }, []);
 
     return (
-        <section className="relative h-screen w-full overflow-hidden bg-y-charcoal">
+        <section className="relative h-[100svh] w-full overflow-hidden bg-y-charcoal">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={index}
@@ -38,13 +38,13 @@ export function HeroSection() {
             <div className="absolute inset-0 bg-black/40" />
 
             {/* Text Content */}
-            <div className="absolute inset-0 flex items-start justify-center pt-24 md:pt-32 z-10 pointer-events-none">
+            <div className="absolute inset-0 flex items-start justify-center pt-[clamp(6rem,15svh,8rem)] z-10 pointer-events-none px-6">
                 <div className="text-white text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         transition={{ duration: 1.5, delay: 0.5 }}
-                        className="writing-vertical-rl text-4xl md:text-6xl font-serif tracking-widest md:tracking-[0.2em] h-auto whitespace-nowrap"
+                        className="writing-vertical-rl text-[clamp(1.875rem,5vw+1rem,3.75rem)] font-serif tracking-widest md:tracking-[0.2em] h-auto whitespace-nowrap"
                     >
                         奈良の刻を、住まう。
                     </motion.div>
