@@ -38,13 +38,13 @@ export function HeroSection() {
             <div className="absolute inset-0 bg-black/40" />
 
             {/* Text Content */}
-            <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+            <div className="absolute inset-0 flex items-start justify-center pt-24 md:pt-32 z-10 pointer-events-none">
                 <div className="text-white text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         transition={{ duration: 1.5, delay: 0.5 }}
-                        className="writing-vertical-rl text-4xl md:text-7xl font-serif tracking-[0.2em] h-[50vh] mx-auto leading-loose drop-shadow-2xl mt-12 md:mt-0"
+                        className="writing-vertical-rl text-4xl md:text-6xl lg:text-7xl font-serif tracking-[0.2em] h-[40vh] md:h-[35vh] mx-auto leading-loose drop-shadow-2xl"
                     >
                         奈良の刻を、住まう。
                     </motion.div>
@@ -53,7 +53,7 @@ export function HeroSection() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 2, delay: 2 }}
-                        className="mt-8 font-sans text-xs tracking-[0.3em] uppercase opacity-80"
+                        className="mt-6 md:mt-8 font-sans text-xs tracking-[0.3em] uppercase opacity-80"
                     >
                         Yamato Real Estate
                     </motion.p>
