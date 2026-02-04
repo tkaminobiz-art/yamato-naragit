@@ -7,26 +7,37 @@ import { Mail, Calendar } from "lucide-react";
 
 export function StickyCTA() {
     const { scrollY } = useScroll();
-    const [isVisible, setIsVisible] = useState(false);
+    const [show, setShow] = useState(false);
+    const [lastY, setLastY] = useState(0);
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        const threshold = 600; // Show after passing Hero roughly
+        const threshold = 600;
+        const direction = latest > lastY ? "down" : "up";
+
         if (latest > threshold) {
-            setIsVisible(true);
+            // After threshold, show only if scrolling up or at bottom
+            if (direction === "up") {
+                setShow(true);
+            } else if (direction === "down") {
+                setShow(false);
+            }
         } else {
-            setIsVisible(false);
+            // Before threshold, always hide
+            setShow(false);
         }
+        setLastY(latest);
     });
 
     return (
         <AnimatePresence>
-            {isVisible && (
+            {show && (
                 <motion.div
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 100, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     className="fixed bottom-0 left-0 right-0 z-50 pointer-events-none"
+                    style={{ position: 'fixed' }} // Ensure fixed
                 >
                     {/* PC View: Floating Panel */}
                     <div className="hidden md:flex justify-center pb-8 pointer-events-auto">

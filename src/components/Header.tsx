@@ -2,21 +2,46 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
     const { scrollY } = useScroll();
-    const bgOpacity = useTransform(scrollY, [0, 500], [0, 0.9]);
-    const textColor = useTransform(scrollY, [0, 500], ["rgba(255,255,255,1)", "rgba(51,51,51,1)"]); // White to Charcoal
+    const bgOpacity = useTransform(scrollY, [0, 500], [0, 0.95]);
+    const textColor = useTransform(scrollY, [0, 500], ["rgba(255,255,255,1)", "rgba(51,51,51,1)"]);
+
+    useEffect(() => {
+        let previousY = scrollY.get();
+        const unsubscribe = scrollY.on("change", (latest) => {
+            const currentY = latest;
+            const direction = currentY > previousY ? "down" : "up";
+
+            if (currentY < 50) {
+                // Always show at top
+                setIsVisible(true);
+            } else if (direction === "down" && !isOpen) {
+                // Hide on scroll down (if menu is closed)
+                setIsVisible(false);
+            } else if (direction === "up") {
+                // Show on scroll up
+                setIsVisible(true);
+            }
+            previousY = currentY;
+        });
+        return () => unsubscribe();
+    }, [scrollY, isOpen]);
 
     return (
         <>
             <motion.header
-                style={{ backgroundColor: `rgba(249, 249, 249, ${bgOpacity.get()})` as any }}
-                className="fixed top-0 left-0 right-0 z-50 px-6 py-6 flex items-center justify-between transition-colors duration-500"
+                initial={{ y: 0 }}
+                animate={{ y: isVisible || isOpen ? 0 : "-100%" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                style={{ backgroundColor: `rgba(249, 249, 249, ${bgOpacity})` as any }}
+                className="fixed top-0 left-0 right-0 z-50 px-6 py-4 md:py-6 flex items-center justify-between shadow-sm md:shadow-none"
             >
                 {/* Logo */}
                 <Link href="/" className="z-50 group">
