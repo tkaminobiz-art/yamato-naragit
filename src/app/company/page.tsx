@@ -3,187 +3,213 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Header } from "@/components/Header";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function CompanyPage() {
     return (
-        <main className="bg-y-off-white min-h-screen pb-24">
+        <main className="bg-[#0a0a0a] min-h-screen text-white pb-32">
             <Header />
 
             {/* Hero Section */}
-            <section className="relative h-[40vh] bg-y-charcoal flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 opacity-40">
+            <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/hero/hero1.webp"
-                        alt="Company Hero"
+                        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80"
+                        alt="Corporate Architecture"
                         fill
-                        className="object-cover"
+                        className="object-cover opacity-20 grayscale"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a]" />
                 </div>
-                <div className="absolute inset-0 bg-black/40" />
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative z-10 text-4xl md:text-5xl font-serif text-white tracking-widest"
+                    transition={{ duration: 1 }}
+                    className="relative z-10 text-center"
                 >
-                    企業情報
-                </motion.h1>
+                    <span className="block text-nara-gold text-xs tracking-[0.4em] mb-4 font-bold">
+                        WHO WE ARE
+                    </span>
+                    <h1 className="text-4xl md:text-6xl font-serif tracking-widest leading-tight">
+                        会社概要
+                    </h1>
+                </motion.div>
             </section>
 
-            {/* Message Section */}
-            <section className="container mx-auto px-6 section-spacing max-w-4xl">
-                <div className="flex flex-col md:flex-row gap-12 items-start">
-                    <div className="md:w-1/3">
-                        <div className="aspect-[3/4] relative bg-gray-200 rounded-sm overflow-hidden shadow-lg">
-                            {/* Placeholder for Representative Image */}
-                            <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-serif bg-gray-300">
-                                <span className="p-4 text-center">古谷泰彦<br />(写真)</span>
-                            </div>
-                        </div>
-                        <div className="mt-4 text-center md:text-left">
-                            <p className="font-serif text-lg text-gray-500">代表取締役社長</p>
-                            <p className="font-serif text-2xl font-bold mt-1 text-y-charcoal">古谷 泰彦</p>
-                        </div>
-                    </div>
+            {/* Principle / Philosophy */}
+            <section className="container mx-auto px-6 py-24 border-b border-white/5">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+                    {/* Image */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="md:w-1/2 relative aspect-[4/3] w-full"
+                    >
+                        <Image
+                            src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80"
+                            alt="Philosophy"
+                            fill
+                            className="object-cover"
+                        />
+                        <div className="absolute inset-0 border border-nara-gold/30 translate-x-4 translate-y-4 -z-10" />
+                    </motion.div>
 
-                    <div className="md:w-2/3 space-y-8 font-serif leading-loose text-y-charcoal">
-                        <h2 className="text-3xl text-nara-gold border-b border-nara-gold/30 pb-4 inline-block">
-                            「誠実」という土台の上に、<br />理想の家を。
-                        </h2>
-                        <div className="text-justify space-y-6 text-gray-700">
-                            <p>
-                                やまと不動産のウェブサイトをご覧いただき、誠にありがとうございます。代表取締役社長の古谷 泰彦です。
-                            </p>
-                            <p>
-                                私たちが家づくりにおいて最も大切にしているのは、お客様に対する「誠実さ」です。<br />
-                                家は、完成がゴールではありません。そこから始まる何十年という暮らしを、いかに豊かで安心できるものにするか。そのために、私たちは派手な広告宣伝費や豪華な展示場にコストをかけることをやめました。
-                            </p>
-                            <div className="border-l-2 border-y-gold pl-4 italic text-gray-600 my-8">
-                                「その予算があるなら、お客様の家の断熱性能を一段階上げよう」<br />
-                                「その費用があるなら、お客様のキッチンを最高級の設備にしよう」
+                    {/* Content */}
+                    <div className="md:w-1/2 space-y-8">
+                        <div>
+                            <span className="text-nara-gold text-xs tracking-[0.2em] block mb-2">PRINCIPLE</span>
+                            <h2 className="text-3xl md:text-4xl font-serif leading-relaxed">
+                                地域に<span className="text-nara-gold">希望</span>を描き、<br />
+                                次代へつなぐ。
+                            </h2>
+                        </div>
+                        <p className="text-gray-400 font-serif leading-loose tracking-wide text-sm md:text-base">
+                            私たちやまと不動産は、単に土地や建物を扱うだけでなく、
+                            そこに住まう人々の「未来」と「幸福」を創造企業でありたいと考えています。<br /><br />
+                            奈良という歴史ある美しき土壌に敬意を払い、
+                            一過性の利益ではなく、100年先の街並みに誇れる仕事を。
+                            その想いを胸に、誠実な家づくりと、透明性の高い不動産取引を追求し続けます。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Company Profile (About Us) */}
+            <section className="container mx-auto px-6 py-24 border-b border-white/5">
+                <div className="max-w-6xl mx-auto">
+                    <div className="flex flex-col md:flex-row gap-16">
+                        {/* Info Column */}
+                        <div className="md:w-1/2">
+                            <span className="text-nara-gold text-xs tracking-[0.2em] block mb-8">ABOUT US</span>
+                            <h2 className="text-3xl font-serif mb-12">本社概要</h2>
+
+                            <dl className="space-y-6 font-serif">
+                                <div className="border-b border-white/10 pb-6 grid grid-cols-1 md:grid-cols-3 gap-2">
+                                    <dt className="text-gray-500 text-sm tracking-widest">商号</dt>
+                                    <dd className="col-span-2 text-white text-lg">株式会社やまと不動産</dd>
+                                </div>
+                                <div className="border-b border-white/10 pb-6 grid grid-cols-1 md:grid-cols-3 gap-2">
+                                    <dt className="text-gray-500 text-sm tracking-widest">代表者</dt>
+                                    <dd className="col-span-2 text-white">代表取締役　古谷 泰彦</dd>
+                                </div>
+                                <div className="border-b border-white/10 pb-6 grid grid-cols-1 md:grid-cols-3 gap-2">
+                                    <dt className="text-gray-500 text-sm tracking-widest">所在地</dt>
+                                    <dd className="col-span-2 text-white">
+                                        〒639-0226<br />
+                                        奈良県香芝市五位堂3-432-1
+                                    </dd>
+                                </div>
+                                <div className="border-b border-white/10 pb-6 grid grid-cols-1 md:grid-cols-3 gap-2">
+                                    <dt className="text-gray-500 text-sm tracking-widest">資本金</dt>
+                                    <dd className="col-span-2 text-white">1,000万円</dd>
+                                </div>
+                                <div className="border-b border-white/10 pb-6 grid grid-cols-1 md:grid-cols-3 gap-2">
+                                    <dt className="text-gray-500 text-sm tracking-widest">免許番号</dt>
+                                    <dd className="col-span-2 text-white">奈良県知事 (4) 第3836号</dd>
+                                </div>
+                                <div className="border-b border-white/10 pb-6 grid grid-cols-1 md:grid-cols-3 gap-2">
+                                    <dt className="text-gray-500 text-sm tracking-widest">加盟団体</dt>
+                                    <dd className="col-span-2 text-white text-sm leading-relaxed">
+                                        (社)全日本不動産協会員<br />
+                                        (社)不動産保証協会会員<br />
+                                        近畿圏不動産流通機構会員
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+
+                        {/* Image & Map Column */}
+                        <div className="md:w-1/2 space-y-8">
+                            <div className="relative aspect-video w-full bg-[#111] overflow-hidden group">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"
+                                    alt="Head Office"
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
                             </div>
-                            <p>
-                                この愚直なまでのこだわりが、私たちの「ハイグレード標準仕様」の原点です。<br />
-                                私は現場の人間として、お客様が住み始めてから「やまと不動産で建てて本当に良かった」と実感していただく瞬間に、何よりも喜びを感じます。
-                            </p>
-                            <p>
-                                奈良・京都という素晴らしい土地で、無理のない資金計画と共に、最高グレードの暮らしを手に入れていただく。そのために、私、そして専務の小林をはじめ、チーム全員がお客様の「一番の理解者」として伴走いたします。
-                            </p>
-                            <p>
-                                建てる前も、建てる時も、そして建てた後も。<br />
-                                お客様の人生を支えるパートナーであり続けることをお約束いたします。
-                            </p>
-                            <p className="text-right mt-8 font-bold text-lg">
-                                株式会社やまと不動産 代表取締役社長　古谷 泰彦
-                            </p>
+                            {/* Map Placeholder */}
+                            <div className="w-full h-[300px] bg-[#111] relative border border-white/10 overflow-hidden">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.0772776361735!2d135.7118!3d34.5512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDMzJzA0LjMiTiAxMzXCsDQyJzQyLjUiRQ!5e0!3m2!1sja!2sjp!4v1620000000000!5m2!1sja!2sjp"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0, filter: 'grayscale(100%) invert(90%)' }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                />
+                                <div className="absolute top-4 left-4 bg-black/80 px-4 py-2 text-xs text-white border-l border-nara-gold">
+                                    HEAD OFFICE
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Staff Section */}
-            <section className="bg-white section-spacing">
-                <div className="container mx-auto px-6 max-w-6xl">
-                    <h2 className="text-center text-3xl font-serif text-y-charcoal mb-16 tracking-widest">
-                        スタッフ紹介
-                    </h2>
+            {/* Branch Info (Support) */}
+            <section className="container mx-auto px-6 py-24">
+                <div className="max-w-6xl mx-auto">
+                    <div className="flex flex-col md:flex-row-reverse gap-16">
+                        {/* Info Column */}
+                        <div className="md:w-1/2">
+                            <span className="text-nara-gold text-xs tracking-[0.2em] block mb-8">BRANCH</span>
+                            <h2 className="text-3xl font-serif mb-12">支店情報</h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Kobayashi (Senior Managing Director) */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="group"
-                        >
-                            <div className="aspect-[3/4] bg-gray-100 relative overflow-hidden mb-6">
-                                <div className="absolute inset-0 bg-y-charcoal/5 group-hover:bg-y-charcoal/0 transition-colors duration-500" />
-                                <div className="absolute inset-0 flex items-center justify-center text-gray-300 font-serif">
-                                    小林専務 (写真)
+                            <dl className="space-y-6 font-serif">
+                                <div className="border-b border-white/10 pb-6 grid grid-cols-1 md:grid-cols-3 gap-2">
+                                    <dt className="text-gray-500 text-sm tracking-widest">支店名</dt>
+                                    <dd className="col-span-2 text-white text-lg">やまと不動産 奈良大宮店</dd>
+                                </div>
+                                <div className="border-b border-white/10 pb-6 grid grid-cols-1 md:grid-cols-3 gap-2">
+                                    <dt className="text-gray-500 text-sm tracking-widest">所在地</dt>
+                                    <dd className="col-span-2 text-white">
+                                        〒630-0000<br />
+                                        奈良県奈良市大宮町X-X-X
+                                    </dd>
+                                </div>
+                                <div className="border-b border-white/10 pb-6 grid grid-cols-1 md:grid-cols-3 gap-2">
+                                    <dt className="text-gray-500 text-sm tracking-widest">連絡先</dt>
+                                    <dd className="col-span-2 text-white flex flex-col gap-2">
+                                        <div className="flex items-center gap-2">
+                                            <Phone size={14} className="text-nara-gold" /> 0742-XX-XXXX
+                                        </div>
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+
+                        {/* Image & Map Column */}
+                        <div className="md:w-1/2 space-y-8">
+                            <div className="relative aspect-video w-full bg-[#111] overflow-hidden group">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80"
+                                    alt="Branch Office"
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                            </div>
+                            {/* Map Placeholder */}
+                            <div className="w-full h-[300px] bg-[#111] relative border border-white/10 overflow-hidden">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1528.0!2d135.8!3d34.68!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sNara!5e0!3m2!1sja!2sjp!4v1620000000000!5m2!1sja!2sjp"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0, filter: 'grayscale(100%) invert(90%)' }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                />
+                                <div className="absolute top-4 left-4 bg-black/80 px-4 py-2 text-xs text-white border-l border-nara-gold">
+                                    NARA OMIYA BRANCH
                                 </div>
                             </div>
-                            <div className="text-center space-y-2">
-                                <p className="text-y-gold font-serif text-sm">代表取締役専務</p>
-                                <h3 className="text-xl font-serif text-y-charcoal font-bold">小林 敬昌</h3>
-                                <p className="text-gray-500 text-sm font-serif mt-4 px-4 leading-relaxed">
-                                    「徹底した伴走で、お客様の理想を形にします。」
-                                </p>
-                            </div>
-                        </motion.div>
-
-                        {/* Other placeholders (can be generic for now as user only mentioned Kobayashi specifically) */}
-                        {[2, 3].map((item) => (
-                            <motion.div
-                                key={item}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: item * 0.1 }}
-                                className="group"
-                            >
-                                <div className="aspect-[3/4] bg-gray-100 relative overflow-hidden mb-6">
-                                    <div className="absolute inset-0 bg-y-charcoal/5 group-hover:bg-y-charcoal/0 transition-colors duration-500" />
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-300 font-serif">
-                                        Staff {item}
-                                    </div>
-                                </div>
-                                <div className="text-center space-y-2">
-                                    <p className="text-y-gold font-serif text-sm">設計・コーディネーター</p>
-                                    <h3 className="text-xl font-serif text-y-charcoal">スタッフ {item}</h3>
-                                    <p className="text-gray-500 text-sm font-serif mt-4">
-                                        「お客様の暮らしに寄り添った提案を心がけています。」
-                                    </p>
-                                </div>
-                            </motion.div>
-                        ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Company Outline */}
-            <section className="container mx-auto px-6 section-spacing max-w-4xl">
-                <h2 className="text-center text-3xl font-serif text-y-charcoal mb-16 tracking-widest">
-                    会社概要
-                </h2>
-                <div className="border-t border-gray-200 font-serif">
-                    <dl className="grid grid-cols-1 md:grid-cols-4 border-b border-gray-200">
-                        <dt className="py-6 font-bold text-y-charcoal md:col-span-1">会社名</dt>
-                        <dd className="py-6 text-gray-600 md:col-span-3">株式会社やまと不動産</dd>
-
-                    </dl>
-                    <dl className="grid grid-cols-1 md:grid-cols-4 border-b border-gray-200">
-                        <dt className="py-6 font-bold text-y-charcoal md:col-span-1">所在地</dt>
-                        <dd className="py-6 text-gray-600 md:col-span-3">
-                            〒630-0000<br />
-                            奈良県奈良市〇〇町1-2-3 (確認要)
-                        </dd>
-                    </dl>
-                    <dl className="grid grid-cols-1 md:grid-cols-4 border-b border-gray-200">
-                        <dt className="py-6 font-bold text-y-charcoal md:col-span-1">設立</dt>
-                        <dd className="py-6 text-gray-600 md:col-span-3">2010年4月</dd>
-                    </dl>
-                    <dl className="grid grid-cols-1 md:grid-cols-4 border-b border-gray-200">
-                        <dt className="py-6 font-bold text-y-charcoal md:col-span-1">代表者</dt>
-                        <dd className="py-6 text-gray-600 md:col-span-3">代表取締役 古谷 泰彦</dd>
-                    </dl>
-                    <dl className="grid grid-cols-1 md:grid-cols-4 border-b border-gray-200">
-                        <dt className="py-6 font-bold text-y-charcoal md:col-span-1">事業内容</dt>
-                        <dd className="py-6 text-gray-600 md:col-span-3">
-                            注文住宅の設計・施工<br />
-                            不動産売買・仲介<br />
-                            リノベーション事業
-                        </dd>
-                    </dl>
-                    <dl className="grid grid-cols-1 md:grid-cols-4 border-b border-gray-200">
-                        <dt className="py-6 font-bold text-y-charcoal md:col-span-1">許認可</dt>
-                        <dd className="py-6 text-gray-600 md:col-span-3">
-                            建設業許可 奈良県知事（般-〇）第〇〇〇〇号<br />
-                            宅地建物取引業免許 奈良県知事（〇）第〇〇〇〇号
-                        </dd>
-                    </dl>
-                </div>
-            </section>
-
-        </main >
+        </main>
     );
 }
