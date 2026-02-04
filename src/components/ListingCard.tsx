@@ -1,18 +1,29 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Property } from "@/data/properties";
-import { MapPin, Ruler } from "lucide-react";
+import { BuildingPlan, calculateMonthlyPayment, calculateTotalPrice } from "@/data/building_plans";
+import { MapPin, Ruler, Calculator, ChevronDown, Check } from "lucide-react";
 
 interface ListingCardProps {
     property: Property;
     index: number;
+    plans?: BuildingPlan[];
 }
 
-export function ListingCard({ property, index }: ListingCardProps) {
+export function ListingCard({ property, index, plans }: ListingCardProps) {
     const isSold = property.status === "Sold";
+    const [isSimulateOpen, setIsSimulateOpen] = useState(false);
+    const [selectedPlanIndex, setSelectedPlanIndex] = useState(0);
+
+    // Simulation Data
+    const hasPlans = plans && plans.length > 0;
+    const selectedPlan = hasPlans ? plans![selectedPlanIndex] : null;
+    const totalPrice = selectedPlan ? calculateTotalPrice(property.priceNumeric, selectedPlan.basePrice) : 0;
+    const monthlyPayment = selectedPlan ? calculateMonthlyPayment(totalPrice) : 0;
 
     return (
         <motion.div
@@ -20,9 +31,10 @@ export function ListingCard({ property, index }: ListingCardProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1, duration: 0.8 }}
-            className="group relative"
+            className="flex flex-col"
         >
-            <Link href="/contact" className="block relative aspect-[4/3] overflow-hidden bg-gray-900 cursor-point">
+            {/* Main Visual Card */}
+            <Link href="/contact" className="block relative aspect-[4/3] overflow-hidden bg-gray-900 group cursor-pointer">
                 {/* Image */}
                 <Image
                     src={property.image}
@@ -96,6 +108,86 @@ export function ListingCard({ property, index }: ListingCardProps) {
                     </div>
                 )}
             </Link>
+
+            {/* Financing Simulation Trigger & Panel */}
+            {hasPlans && !isSold && (
+                <div className="bg-[#111] border-x border-b border-white/10">
+                    <button
+                        onClick={() => setIsSimulateOpen(!isSimulateOpen)}
+                        className="w-full flex items-center justify-between p-4 text-xs tracking-[0.2em] text-gray-400 hover:text-nara-gold hover:bg-white/5 transition-colors font-serif"
+                    >
+                        <span className="flex items-center gap-2">
+                            <Calculator size={14} />
+                            FINANCING SIMULATION
+                        </span>
+                        <ChevronDown
+                            size={14}
+                            className={`transition-transform duration-300 ${isSimulateOpen ? 'rotate-180' : ''}`}
+                        />
+                    </button>
+
+                    <AnimatePresence>
+                        {isSimulateOpen && selectedPlan && (
+                            <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                className="overflow-hidden bg-[#161616]"
+                            >
+                                <div className="p-6 border-t border-white/5 space-y-6">
+                                    {/* Plan Selector */}
+                                    <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                                        {plans!.map((plan, idx) => (
+                                            <button
+                                                key={plan.id}
+                                                onClick={() => setSelectedPlanIndex(idx)}
+                                                className={`flex-shrink-0 px-4 py-2 border text-xs tracking-wider transition-all ${idx === selectedPlanIndex
+                                                        ? 'border-nara-gold text-nara-gold bg-nara-gold/10'
+                                                        : 'border-white/20 text-gray-500 hover:border-gray-400'
+                                                    }`}
+                                            >
+                                                {plan.layout} ({plan.tsubo}坪)
+                                            </button>
+                                        ))}
+                                    </div>
+
+                                    {/* Calculation Result */}
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div className="space-y-1">
+                                            <p className="text-xs text-gray-500 tracking-wider">TOTAL PRICE</p>
+                                            <p className="text-xl font-serif text-white">
+                                                {totalPrice.toLocaleString()} <span className="text-xs">万円</span>
+                                            </p>
+                                            <p className="text-[10px] text-gray-600">土地 + 建物({selectedPlan.series})</p>
+                                        </div>
+                                        <div className="space-y-1 text-right">
+                                            <p className="text-xs text-nara-gold tracking-wider">MONTHLY</p>
+                                            <p className="text-xl font-serif text-nara-gold font-bold">
+                                                {monthlyPayment.toLocaleString()} <span className="text-xs">万円</span>
+                                            </p>
+                                            <p className="text-[10px] text-gray-600">35年返済想定</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Plan Features */}
+                                    <div className="space-y-2">
+                                        {selectedPlan.features.map((feature, i) => (
+                                            <div key={i} className="flex items-center gap-2 text-xs text-gray-400">
+                                                <Check size={10} className="text-nara-gold" />
+                                                <span>{feature}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <div className="pt-2 text-[10px] text-gray-600 leading-relaxed">
+                                        ※建物価格{selectedPlan.basePrice}万円(税込)での試算です。諸費用・オプションは含みません。
+                                    </div>
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
+            )}
         </motion.div>
     );
 }
