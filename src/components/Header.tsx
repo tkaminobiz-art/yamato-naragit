@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -13,26 +13,23 @@ export function Header() {
     const bgOpacity = useTransform(scrollY, [0, 500], [0, 0.95]);
     const textColor = useTransform(scrollY, [0, 500], ["rgba(255,255,255,1)", "rgba(51,51,51,1)"]);
 
-    useEffect(() => {
-        let previousY = scrollY.get();
-        const unsubscribe = scrollY.on("change", (latest) => {
-            const currentY = latest;
-            const direction = currentY > previousY ? "down" : "up";
+    // Use ref to track previous scroll position without re-renders
+    const lastYRef = useRef(0);
 
-            if (currentY < 50) {
-                // Always show at top
-                setIsVisible(true);
-            } else if (direction === "down" && !isOpen) {
-                // Hide on scroll down (if menu is closed)
-                setIsVisible(false);
-            } else if (direction === "up") {
-                // Show on scroll up
-                setIsVisible(true);
-            }
-            previousY = currentY;
-        });
-        return () => unsubscribe();
-    }, [scrollY, isOpen]);
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previousY = lastYRef.current;
+        const direction = latest > previousY ? "down" : "up";
+
+        if (latest < 50) {
+            setIsVisible(true);
+        } else if (direction === "down" && !isOpen) {
+            setIsVisible(false);
+        } else if (direction === "up") {
+            setIsVisible(true);
+        }
+
+        lastYRef.current = latest;
+    });
 
     return (
         <>
