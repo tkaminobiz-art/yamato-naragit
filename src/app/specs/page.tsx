@@ -72,21 +72,22 @@ function ChaosSection() {
 
     const y1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
     const y2 = useTransform(scrollYProgress, [0, 1], [0, -400]);
-    const textOpacity = useTransform(scrollYProgress, [0, 0.4, 0.6], [0, 1, 0]);
-    const messageOpacity = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
-    const messageScale = useTransform(scrollYProgress, [0.6, 0.8], [0.8, 1]);
+    const textOpacity = useTransform(scrollYProgress, [0, 0.4, 0.7], [0, 1, 0]);
+    const messageOpacity = useTransform(scrollYProgress, [0.6, 0.85], [0, 1]);
+    const messageScale = useTransform(scrollYProgress, [0.6, 0.85], [0.9, 1]);
 
     const anxieties = [
-        { text: "標準だと安っぽくなりませんか？", x: "10%", y: "20%", delay: 0 },
-        { text: "このキッチンはオプションですよね...？", x: "60%", y: "15%", delay: 0.2 },
-        { text: "あとから追加費用が怖いです", x: "20%", y: "60%", delay: 0.4 },
-        { text: "CMで見たアレはついてないの？", x: "70%", y: "70%", delay: 0.1 },
+        { text: "標準だと安っぽくなりませんか？", x: "10%", y: "20%" },
+        { text: "このキッチンはオプションですよね...？", x: "60%", y: "15%" },
+        { text: "あとから追加費用が怖いです", x: "20%", y: "60%" },
+        { text: "CMで見たアレはついてないの？", x: "70%", y: "70%" },
     ];
 
     return (
-        <section ref={containerRef} className="relative h-[150vh] overflow-hidden">
-            {/* Floating Anxieties */}
-            <div className="absolute inset-0 pointer-events-none sticky top-0 h-screen flex items-center justify-center">
+        <section ref={containerRef} className="relative h-[200vh]">
+            {/* Sticky Container */}
+            <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+                {/* Floating Anxieties */}
                 {anxieties.map((item, i) => (
                     <motion.div
                         key={i}
@@ -96,7 +97,7 @@ function ChaosSection() {
                             opacity: textOpacity,
                             y: i % 2 === 0 ? y1 : y2
                         }}
-                        className="absolute text-gray-500/30 font-serif text-xl md:text-3xl font-bold whitespace-nowrap blur-sm"
+                        className="absolute z-10 text-gray-400 font-serif text-xl md:text-3xl font-bold whitespace-nowrap opacity-70 blur-[0.5px]"
                     >
                         {item.text}
                     </motion.div>
@@ -105,7 +106,7 @@ function ChaosSection() {
                 {/* Core Message */}
                 <motion.div
                     style={{ opacity: messageOpacity, scale: messageScale }}
-                    className="text-center z-20 px-6"
+                    className="relative z-20 text-center px-6"
                 >
                     <h2 className="text-3xl md:text-5xl font-serif font-bold leading-normal">
                         やまとの「標準」は、<br />
