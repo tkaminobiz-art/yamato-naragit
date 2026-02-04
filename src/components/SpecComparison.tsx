@@ -30,7 +30,7 @@ const comparisonData = [
         label: "外壁材",
         standard: "サイディング 14mm",
         yamato: "ヘーベルパワーボード 37mm\n(耐久性・断熱性2倍)",
-        highlight: false
+        highlight: true
     },
     {
         category: "DAMPER",

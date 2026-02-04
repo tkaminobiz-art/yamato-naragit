@@ -15,6 +15,10 @@ const config: Config = {
                 "y-charcoal": "#333333",
                 "y-gold": "#C0A062",
                 "y-brown": "#4A3B32",
+                // Alias for existing components using 'nara-' prefix
+                "nara-charcoal": "#333333",
+                "nara-gold": "#C0A062",
+                "nara-paper": "#F9F9F9",
             },
             fontFamily: {
                 serif: ["var(--font-zen-old-mincho)", "serif"],
