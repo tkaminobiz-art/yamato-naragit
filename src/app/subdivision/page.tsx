@@ -8,6 +8,7 @@ import { ListingCard } from "@/components/ListingCard";
 import TestimonialSection from "@/components/TestimonialSection";
 import PropertyFAQSection from "@/components/PropertyFAQSection";
 import { properties } from "@/data/properties";
+import { getBuildingPlanById } from "@/data/building_plans";
 import Image from "next/image";
 import Link from "next/link";
 import { Lock } from "lucide-react";
@@ -141,7 +142,12 @@ export default function SubdivisionPage() {
                             }
 
                             return (
-                                <ListingCard key={item.id} property={item} index={idx} />
+                                <ListingCard
+                                    key={item.id}
+                                    property={item}
+                                    index={idx}
+                                    plans={item.recommendedPlanIds?.map(id => getBuildingPlanById(id)).filter((p): p is NonNullable<typeof p> => p !== undefined)}
+                                />
                             );
                         })}
                     </div>
