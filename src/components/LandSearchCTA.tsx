@@ -1,4 +1,3 @@
-```
 "use client";
 
 import { motion } from "framer-motion";
@@ -15,7 +14,7 @@ export function LandSearchCTA() {
             </div>
 
             <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                
+
                 {/* Left: Copywriting */}
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
@@ -31,7 +30,7 @@ export function LandSearchCTA() {
                             <span className="text-gray-400">ここにある。</span>
                         </h2>
                     </div>
-                    
+
                     <div className="space-y-6 font-serif text-gray-300 leading-loose text-sm md:text-base max-w-lg">
                         <p>
                             良い土地情報が、ポータルサイトに出回ることは<br className="hidden md:inline" />
@@ -45,8 +44,8 @@ export function LandSearchCTA() {
                     </div>
 
                     <div className="pt-4">
-                        <Link 
-                            href="/subdivision" 
+                        <Link
+                            href="/subdivision"
                             className="group relative inline-flex items-center gap-4 px-8 py-4 bg-transparent border border-white/30 overflow-hidden hover:border-nara-gold/50 transition-colors duration-500"
                         >
                             <span className="absolute inset-0 bg-white/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
@@ -69,15 +68,15 @@ export function LandSearchCTA() {
                 >
                     {/* Glass Card */}
                     <div className="relative aspect-[4/3] bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-md rounded-sm border border-white/10 p-8 flex flex-col items-center justify-center group overflow-hidden">
-                        
+
                         {/* Background blurred map/list hint */}
                         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20 blur-sm group-hover:scale-110 transition-transform duration-1000" />
-                        
+
                         <div className="relative z-10 flex flex-col items-center text-center space-y-6">
                             <div className="w-16 h-16 rounded-full bg-[#0a0a0a] border border-nara-gold/30 flex items-center justify-center shadow-2xl group-hover:border-nara-gold transition-colors duration-500">
                                 <Home className="w-6 h-6 text-nara-gold" />
                             </div>
-                            
+
                             <div>
                                 <p className="text-nara-gold text-xs tracking-[0.2em] mb-2 font-serif">DIRECT SALES</p>
                                 <h3 className="text-2xl font-serif text-white mb-2">自社分譲地リスト</h3>
