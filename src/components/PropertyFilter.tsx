@@ -80,7 +80,7 @@ export function PropertyFilter({ filterValues, onChange, resultCount }: Property
     };
 
     return (
-        <div className="bg-white border-b border-gray-200 sticky top-0 z-20 shadow-sm">
+        <div className="bg-white border-b border-gray-200 shadow-sm relative z-10">
             <div className="container mx-auto max-w-6xl px-4 md:px-6">
                 {/* モバイル: トグルボタン */}
                 <div className="md:hidden py-4">
