@@ -58,9 +58,9 @@ html {
         @apply text-balance leading-snug mb-4 md:mb-6 text-y-charcoal font-serif;
     }
 
-    /* セクション用のスペーシングユーティリティ */
+    /* セクション用スペーシング (Enhanced for Luxury Feel) */
     .section-spacing {
-        @apply py-20 md:py-28 lg:py-36;
+        @apply py-32 md:py-48 lg:py-64;
     }
 
     /* 見出し用のスペーシング */

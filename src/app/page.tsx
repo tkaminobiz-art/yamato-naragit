@@ -2,12 +2,14 @@
 
 import { HeroSection } from "@/components/HeroSection";
 import { Header } from "@/components/Header";
-import { ValueProposition } from "@/components/ValueProposition";
 import { LandSearchCTA } from "@/components/LandSearchCTA";
 import { PropertyShowcase } from "@/components/PropertyShowcase";
 import { SplashScreen } from "@/components/SplashScreen";
 import { WhyYamato } from "@/components/WhyYamato";
 import { StickyCTA } from "@/components/StickyCTA";
+import { ChaosSection } from "@/components/ChaosSection";
+import { HighGradeShowcase } from "@/components/HighGradeShowcase";
+import { SpecComparison } from "@/components/SpecComparison";
 
 export default function Home() {
     return (
@@ -17,7 +19,9 @@ export default function Home() {
             <Header />
             <HeroSection />
             <WhyYamato />
-            <ValueProposition />
+            <ChaosSection />
+            <HighGradeShowcase />
+            <SpecComparison />
             <LandSearchCTA />
             <PropertyShowcase />
 
