@@ -80,215 +80,217 @@ export function PropertyFilter({ filterValues, onChange, resultCount }: Property
     };
 
     return (
-        <div className="bg-white border-b border-gray-200 shadow-sm relative z-10">
-            <div className="container mx-auto max-w-6xl px-4 md:px-6">
-                {/* モバイル: トグルボタン */}
-                <div className="md:hidden py-4">
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="w-full flex items-center justify-between bg-y-charcoal text-white px-4 py-3 rounded"
+    return (
+        <>
+            {/* Filter Trigger Button */}
+            <div className="flex justify-end container mx-auto px-6 py-8">
+                <button
+                    onClick={() => setIsOpen(true)}
+                    className="group flex items-center gap-3 px-6 py-3 border border-white/20 hover:border-nara-gold transition-colors duration-300 rounded-sm"
+                >
+                    <span className="font-serif text-white tracking-[0.2em] text-sm group-hover:text-nara-gold transition-colors">FILTER</span>
+                    <Filter size={16} className="text-nara-gold" />
+                </button>
+            </div>
+
+            {/* Filter Overlay */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[60] bg-y-charcoal/95 backdrop-blur-md flex items-center justify-center p-6"
                     >
-                        <div className="flex items-center gap-2">
-                            <Filter size={18} />
-                            <span className="font-serif text-sm">絞り込み検索</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <span className="text-nara-gold text-xs font-bold">{resultCount}件</span>
-                            <ChevronDown
-                                size={18}
-                                className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
-                            />
-                        </div>
-                    </button>
-                </div>
-
-                {/* フィルターパネル */}
-                <AnimatePresence>
-                    {(isOpen || isDesktop) && (
                         <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            className="overflow-hidden"
+                            initial={{ scale: 0.95, y: 20 }}
+                            animate={{ scale: 1, y: 0 }}
+                            exit={{ scale: 0.95, y: 20 }}
+                            className="w-full max-w-4xl bg-[#1a1a1a] border border-white/10 rounded-sm p-8 md:p-12 max-h-[90vh] overflow-y-auto"
                         >
-                            <div className="py-6 space-y-4">
+                            <div className="flex justify-between items-center mb-12 border-b border-white/10 pb-6">
+                                <h3 className="text-2xl font-serif text-white tracking-widest">
+                                    条件を絞り込む
+                                </h3>
+                                <button
+                                    onClick={() => setIsOpen(false)}
+                                    className="p-2 hover:bg-white/10 rounded-full transition-colors text-white"
+                                >
+                                    <X size={24} />
+                                </button>
+                            </div>
+
+                            <div className="space-y-12">
                                 {/* エリア・駅 */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div>
-                                        <label className="block text-xs font-serif text-gray-600 mb-2">
-                                            エリア（市町村）
+                                        <label className="block text-xs font-sans text-nara-gold tracking-widest mb-4">
+                                            AREA
                                         </label>
-                                        <select
-                                            value={filterValues.city}
-                                            onChange={(e) =>
-                                                onChange({ ...filterValues, city: e.target.value })
-                                            }
-                                            className="w-full border border-gray-300 px-3 py-2 text-sm rounded focus:outline-none focus:border-y-gold"
-                                        >
-                                            {CITIES.map((city) => (
-                                                <option key={city} value={city}>
-                                                    {city}
-                                                </option>
-                                            ))}
-                                        </select>
+                                        <div className="relative">
+                                            <select
+                                                value={filterValues.city}
+                                                onChange={(e) =>
+                                                    onChange({ ...filterValues, city: e.target.value })
+                                                }
+                                                className="w-full bg-transparent border-b border-gray-700 text-white py-3 pr-8 focus:outline-none focus:border-nara-gold transition-colors appearance-none rounded-none"
+                                            >
+                                                {CITIES.map((city) => (
+                                                    <option key={city} value={city} className="bg-y-charcoal text-white">
+                                                        {city}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" size={16} />
+                                        </div>
                                     </div>
                                     <div>
-                                        <label className="block text-xs font-serif text-gray-600 mb-2">
-                                            最寄り駅
+                                        <label className="block text-xs font-sans text-nara-gold tracking-widest mb-4">
+                                            STATION
                                         </label>
-                                        <select
-                                            value={filterValues.station}
-                                            onChange={(e) =>
-                                                onChange({ ...filterValues, station: e.target.value })
-                                            }
-                                            className="w-full border border-gray-300 px-3 py-2 text-sm rounded focus:outline-none focus:border-y-gold"
-                                        >
-                                            {STATIONS.map((station) => (
-                                                <option key={station} value={station}>
-                                                    {station}
-                                                </option>
-                                            ))}
-                                        </select>
+                                        <div className="relative">
+                                            <select
+                                                value={filterValues.station}
+                                                onChange={(e) =>
+                                                    onChange({ ...filterValues, station: e.target.value })
+                                                }
+                                                className="w-full bg-transparent border-b border-gray-700 text-white py-3 pr-8 focus:outline-none focus:border-nara-gold transition-colors appearance-none rounded-none"
+                                            >
+                                                {STATIONS.map((station) => (
+                                                    <option key={station} value={station} className="bg-y-charcoal text-white">
+                                                        {station}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" size={16} />
+                                        </div>
                                     </div>
                                 </div>
 
-                                {/* 価格帯 */}
-                                <div>
-                                    <label className="block text-xs font-serif text-gray-600 mb-2">
-                                        価格帯（万円）
-                                    </label>
-                                    <div className="flex items-center gap-2">
-                                        <input
-                                            type="number"
-                                            placeholder="下限なし"
-                                            value={filterValues.priceMin || ""}
-                                            onChange={(e) =>
-                                                onChange({
-                                                    ...filterValues,
-                                                    priceMin: Number(e.target.value) || 0,
-                                                })
-                                            }
-                                            className="flex-1 border border-gray-300 px-3 py-2 text-sm rounded focus:outline-none focus:border-y-gold"
-                                        />
-                                        <span className="text-gray-500">〜</span>
-                                        <input
-                                            type="number"
-                                            placeholder="上限なし"
-                                            value={filterValues.priceMax === 10000 ? "" : filterValues.priceMax}
-                                            onChange={(e) =>
-                                                onChange({
-                                                    ...filterValues,
-                                                    priceMax: Number(e.target.value) || 10000,
-                                                })
-                                            }
-                                            className="flex-1 border border-gray-300 px-3 py-2 text-sm rounded focus:outline-none focus:border-y-gold"
-                                        />
+                                {/* 価格・土地面積 */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div>
+                                        <label className="block text-xs font-sans text-nara-gold tracking-widest mb-4">
+                                            PRICE (万円)
+                                        </label>
+                                        <div className="flex items-center gap-4">
+                                            <input
+                                                type="number"
+                                                placeholder="MIN"
+                                                value={filterValues.priceMin || ""}
+                                                onChange={(e) =>
+                                                    onChange({
+                                                        ...filterValues,
+                                                        priceMin: Number(e.target.value) || 0,
+                                                    })
+                                                }
+                                                className="flex-1 bg-transparent border-b border-gray-700 text-white py-3 focus:outline-none focus:border-nara-gold transition-colors placeholder-gray-700"
+                                            />
+                                            <span className="text-gray-500">〜</span>
+                                            <input
+                                                type="number"
+                                                placeholder="MAX"
+                                                value={filterValues.priceMax === 10000 ? "" : filterValues.priceMax}
+                                                onChange={(e) =>
+                                                    onChange({
+                                                        ...filterValues,
+                                                        priceMax: Number(e.target.value) || 10000,
+                                                    })
+                                                }
+                                                className="flex-1 bg-transparent border-b border-gray-700 text-white py-3 focus:outline-none focus:border-nara-gold transition-colors placeholder-gray-700"
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-
-                                {/* 土地面積 */}
-                                <div>
-                                    <label className="block text-xs font-serif text-gray-600 mb-2">
-                                        土地面積（坪）
-                                    </label>
-                                    <div className="flex items-center gap-2">
-                                        <input
-                                            type="number"
-                                            placeholder="下限なし"
-                                            value={filterValues.landSizeMin || ""}
-                                            onChange={(e) =>
-                                                onChange({
-                                                    ...filterValues,
-                                                    landSizeMin: Number(e.target.value) || 0,
-                                                })
-                                            }
-                                            className="flex-1 border border-gray-300 px-3 py-2 text-sm rounded focus:outline-none focus:border-y-gold"
-                                        />
-                                        <span className="text-gray-500">〜</span>
-                                        <input
-                                            type="number"
-                                            placeholder="上限なし"
-                                            value={filterValues.landSizeMax === 200 ? "" : filterValues.landSizeMax}
-                                            onChange={(e) =>
-                                                onChange({
-                                                    ...filterValues,
-                                                    landSizeMax: Number(e.target.value) || 200,
-                                                })
-                                            }
-                                            className="flex-1 border border-gray-300 px-3 py-2 text-sm rounded focus:outline-none focus:border-y-gold"
-                                        />
+                                    <div>
+                                        <label className="block text-xs font-sans text-nara-gold tracking-widest mb-4">
+                                            SIZE (坪)
+                                        </label>
+                                        <div className="flex items-center gap-4">
+                                            <input
+                                                type="number"
+                                                placeholder="MIN"
+                                                value={filterValues.landSizeMin || ""}
+                                                onChange={(e) =>
+                                                    onChange({
+                                                        ...filterValues,
+                                                        landSizeMin: Number(e.target.value) || 0,
+                                                    })
+                                                }
+                                                className="flex-1 bg-transparent border-b border-gray-700 text-white py-3 focus:outline-none focus:border-nara-gold transition-colors placeholder-gray-700"
+                                            />
+                                            <span className="text-gray-500">〜</span>
+                                            <input
+                                                type="number"
+                                                placeholder="MAX"
+                                                value={filterValues.landSizeMax === 200 ? "" : filterValues.landSizeMax}
+                                                onChange={(e) =>
+                                                    onChange({
+                                                        ...filterValues,
+                                                        landSizeMax: Number(e.target.value) || 200,
+                                                    })
+                                                }
+                                                className="flex-1 bg-transparent border-b border-gray-700 text-white py-3 focus:outline-none focus:border-nara-gold transition-colors placeholder-gray-700"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
 
                                 {/* 建築条件 */}
                                 <div>
-                                    <label className="block text-xs font-serif text-gray-600 mb-2">
-                                        建築条件
+                                    <label className="block text-xs font-sans text-nara-gold tracking-widest mb-4">
+                                        CONDITION
                                     </label>
-                                    <div className="flex gap-4">
-                                        <label className="flex items-center gap-2">
-                                            <input
-                                                type="radio"
-                                                checked={filterValues.hasConstructionCondition === "all"}
-                                                onChange={() =>
-                                                    onChange({
-                                                        ...filterValues,
-                                                        hasConstructionCondition: "all",
-                                                    })
-                                                }
-                                                className="accent-y-gold"
-                                            />
-                                            <span className="text-sm">指定しない</span>
-                                        </label>
-                                        <label className="flex items-center gap-2">
-                                            <input
-                                                type="radio"
-                                                checked={filterValues.hasConstructionCondition === "yes"}
-                                                onChange={() =>
-                                                    onChange({
-                                                        ...filterValues,
-                                                        hasConstructionCondition: "yes",
-                                                    })
-                                                }
-                                                className="accent-y-gold"
-                                            />
-                                            <span className="text-sm">あり</span>
-                                        </label>
-                                        <label className="flex items-center gap-2">
-                                            <input
-                                                type="radio"
-                                                checked={filterValues.hasConstructionCondition === "no"}
-                                                onChange={() =>
-                                                    onChange({
-                                                        ...filterValues,
-                                                        hasConstructionCondition: "no",
-                                                    })
-                                                }
-                                                className="accent-y-gold"
-                                            />
-                                            <span className="text-sm">なし</span>
-                                        </label>
+                                    <div className="flex gap-8">
+                                        {[
+                                            { label: "指定しない", value: "all" },
+                                            { label: "建築条件あり", value: "yes" },
+                                            { label: "建築条件なし", value: "no" }
+                                        ].map((opt) => (
+                                            <label key={opt.value} className="flex items-center gap-3 cursor-pointer group">
+                                                <div className={`w-4 h-4 border transition-colors flex items-center justify-center ${filterValues.hasConstructionCondition === opt.value ? 'border-nara-gold bg-nara-gold' : 'border-gray-600 group-hover:border-gray-400'}`}>
+                                                    {filterValues.hasConstructionCondition === opt.value && <div className="w-2 h-2 bg-y-charcoal" />}
+                                                </div>
+                                                <input
+                                                    type="radio"
+                                                    value={opt.value}
+                                                    checked={filterValues.hasConstructionCondition === opt.value}
+                                                    onChange={() =>
+                                                        onChange({
+                                                            ...filterValues,
+                                                            hasConstructionCondition: opt.value as any,
+                                                        })
+                                                    }
+                                                    className="hidden"
+                                                />
+                                                <span className={`text-sm transition-colors ${filterValues.hasConstructionCondition === opt.value ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'}`}>
+                                                    {opt.label}
+                                                </span>
+                                            </label>
+                                        ))}
                                     </div>
                                 </div>
 
                                 {/* アクション */}
-                                <div className="flex gap-2 pt-2">
+                                <div className="flex gap-6 pt-8 border-t border-white/10">
                                     <button
                                         onClick={handleReset}
-                                        className="flex items-center justify-center gap-2 flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded text-sm font-serif transition-colors"
+                                        className="px-8 py-4 text-gray-500 hover:text-white transition-colors text-sm font-serif tracking-widest"
                                     >
-                                        <X size={16} />
-                                        リセット
+                                        RESET
                                     </button>
-                                    <div className="flex items-center justify-center bg-nara-gold text-white px-6 py-2 rounded text-sm font-serif font-bold">
-                                        {resultCount} 件が該当
-                                    </div>
+                                    <button
+                                        onClick={() => setIsOpen(false)}
+                                        className="flex-1 bg-white text-y-charcoal hover:bg-nara-gold hover:text-white transition-all duration-300 py-4 text-sm font-serif tracking-widest font-bold flex items-center justify-center gap-4"
+                                    >
+                                        <span>検索結果を見る</span>
+                                        <span className="bg-y-charcoal text-white text-xs px-2 py-1 rounded-full">{resultCount}</span>
+                                    </button>
                                 </div>
                             </div>
                         </motion.div>
-                    )}
-                </AnimatePresence>
-            </div>
-        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
     );
 }
