@@ -1,10 +1,11 @@
 "use client";
 
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,7 @@ export function Header() {
     const { scrollY } = useScroll();
     const bgOpacity = useTransform(scrollY, [0, 500], [0, 0.95]);
     const textColor = useTransform(scrollY, [0, 500], ["rgba(255,255,255,1)", "rgba(51,51,51,1)"]);
+    const pathname = usePathname();
 
     // Use ref to track previous scroll position without re-renders
     const lastYRef = useRef(0);
@@ -30,6 +32,12 @@ export function Header() {
 
         lastYRef.current = latest;
     });
+
+    const concepts = [
+        { name: "Concept A: Rationalism", path: "/concept/smart-rationalism", desc: "Logic & Math" },
+        { name: "Concept B: Lifestyle", path: "/concept/new-standard", desc: "New Standard" },
+        { name: "Concept C: Trust", path: "/concept/reliable-narrative", desc: "Reliable Narrative" },
+    ];
 
     return (
         <>
@@ -80,17 +88,51 @@ export function Header() {
                 initial={{ y: "-100%" }}
                 animate={{ y: isOpen ? "0%" : "-100%" }}
                 transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-                className="fixed inset-0 bg-y-off-white z-40 flex items-center justify-center text-y-charcoal"
+                className="fixed inset-0 bg-y-off-white z-40 flex items-center justify-center text-y-charcoal overflow-y-auto"
             >
-                <div className="text-center space-y-8">
-                    <nav className="flex flex-col gap-6 text-2xl font-serif">
-                        {["Concept", "Specs", "Lineup", "Works", "Company"].map((item) => (
+                <div className="text-center space-y-8 py-20 px-6 w-full max-w-lg mx-auto">
+
+                    {/* Concept Switcher (Dev/Internal Only) */}
+                    <div className="border border-nara-gold/30 rounded-sm p-6 bg-white/50 mb-8">
+                        <p className="text-xs font-bold tracking-widest text-nara-gold mb-4">- CONCEPT VERIFICATION -</p>
+                        <div className="space-y-4">
+                            {concepts.map((c) => (
+                                <Link
+                                    key={c.path}
+                                    href={c.path}
+                                    onClick={() => setIsOpen(false)}
+                                    className={`flex items-center justify-between p-3 rounded-sm transition-colors ${pathname === c.path
+                                            ? "bg-nara-charcoal text-white"
+                                            : "hover:bg-gray-100 text-gray-600"
+                                        }`}
+                                >
+                                    <div className="text-left">
+                                        <span className="block text-sm font-serif font-bold">{c.name}</span>
+                                        <span className="block text-[10px] opacity-70 tracking-wider">{c.desc}</span>
+                                    </div>
+                                    <ChevronRight size={16} />
+                                </Link>
+                            ))}
+                        </div>
+                        <div className="mt-4 pt-4 border-t border-dashed border-gray-200">
+                            <Link
+                                href="/"
+                                onClick={() => setIsOpen(false)}
+                                className={`block text-xs font-bold tracking-widest ${pathname === "/" ? "text-nara-charcoal decoration-2 underline" : "text-gray-400 hover:text-nara-charcoal"}`}
+                            >
+                                BACK TO CURRENT TOP
+                            </Link>
+                        </div>
+                    </div>
+
+                    <nav className="flex flex-col gap-5 text-xl font-serif">
+                        {["Specs", "Lineup", "Subdivision", "Works", "Company"].map((item) => (
                             <Link key={item} href={`/${item.toLowerCase()}`} onClick={() => setIsOpen(false)} className="hover:text-y-gold transition-colors block">
-                                {item}
+                                {item.toUpperCase()}
                             </Link>
                         ))}
                     </nav>
-                    <div className="pt-12 border-t border-y-charcoal/10 w-full max-w-xs mx-auto">
+                    <div className="pt-8 border-t border-y-charcoal/10 w-full mx-auto">
                         <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-4 border border-y-charcoal hover:bg-y-charcoal hover:text-white transition-colors text-sm tracking-widest mb-4">
                             資料請求・お問い合わせ
                         </Link>
