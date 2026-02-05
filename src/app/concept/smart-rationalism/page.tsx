@@ -178,7 +178,7 @@ export default function SmartRationalismPage() {
                         ))}
                     </div>
                     <div className="mt-1 text-right">
-                        <Link href="/specs" className="inline-block text-xs font-mono border-b border-black pb-1 hover:text-nara-gold hover:border-nara-gold transition-colors">>> VIEW FULL SPECS LIST</Link>
+                        <Link href="/specs" className="inline-block text-xs font-mono border-b border-black pb-1 hover:text-nara-gold hover:border-nara-gold transition-colors">&gt;&gt; VIEW FULL SPECS LIST</Link>
                     </div>
                 </div>
             </section>
