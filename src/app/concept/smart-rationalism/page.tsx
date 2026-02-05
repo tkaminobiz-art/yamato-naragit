@@ -2,9 +2,12 @@
 
 import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+// Remove Footer import as it's in layout
 import { Check, ArrowRight, Calculator, MapPin, Home } from "lucide-react";
 import Link from "next/link";
+import { HighGradeShowcase } from "@/components/HighGradeShowcase";
+import { SpecComparison } from "@/components/SpecComparison";
+import { LandSearchCTA } from "@/components/LandSearchCTA";
 
 export default function SmartRationalismPage() {
     return (
@@ -83,64 +86,22 @@ export default function SmartRationalismPage() {
                 </div>
             </section>
 
-            {/* Inclusions Grid */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-6 max-w-6xl">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <span className="text-nara-gold font-bold tracking-widest text-xs mb-4 block">ALL INCLUDED</span>
-                            <h3 className="text-3xl font-bold mb-6">3,060万円の中に、<br />すべて含まれています。</h3>
-                            <p className="text-gray-600 mb-8 leading-relaxed">
-                                後から追加費用が発生する「オプション商法」とは無縁です。
-                                以下のハイグレード設備も、地盤改良費も、すべてこの価格に含まれています。
-                            </p>
-                            <Link href="/specs" className="inline-flex items-center gap-2 text-nara-charcoal border-b border-nara-charcoal pb-1 font-bold hover:text-nara-gold hover:border-nara-gold transition-colors">
-                                詳細スペックを見る <ArrowRight size={16} />
-                            </Link>
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {[
-                                { name: "地盤改良工事費 ¥0", desc: "会社が全額負担", icon: "💎" },
-                                { name: "クリナップ ステディア", desc: "ステンレスキャビネット", icon: "🍽️" },
-                                { name: "MIRAIE 制震", desc: "住友ゴム工業", icon: "🛡️" },
-                                { name: "ヘーベルパワーボード", desc: "37mm厚 断熱・遮音", icon: "🧱" },
-                            ].map((item, i) => (
-                                <div key={i} className="p-6 bg-slate-50 rounded-sm border border-slate-100 flex flex-col gap-3">
-                                    <div className="text-2xl">{item.icon}</div>
-                                    <div>
-                                        <h4 className="font-bold text-nara-charcoal">{item.name}</h4>
-                                        <p className="text-xs text-gray-500 mt-1">{item.desc}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+            {/* High Grade Showcase: Visual Proof */}
+            <div className="bg-white pt-12">
+                <div className="text-center mb-0">
+                    <span className="text-nara-charcoal font-bold tracking-[0.2em] text-xs block mb-4">QUALITY ASSURANCE</span>
+                    <h3 className="text-2xl md:text-3xl font-bold">価格は抑えても、<br />質は最高峰。</h3>
+                    <p className="text-gray-500 mt-4 text-sm">3,060万円の中に、これら全てが含まれています。</p>
                 </div>
-            </section>
+                <HighGradeShowcase />
+            </div>
 
-            {/* CTA */}
-            <section className="py-20 bg-nara-charcoal text-white text-center">
-                <div className="container mx-auto px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                        今週末、<span className="text-nara-gold">矢田の現地</span>で<br />
-                        その「答え」を確かめる。
-                    </h2>
-                    <p className="text-gray-400 mb-12 max-w-xl mx-auto">
-                        論理的に考えれば、これ以外の選択肢はないはずです。
-                        まずは現地を見て、その広さと可能性を体感してください。
-                    </p>
-                    <div className="flex flex-col md:flex-row justify-center gap-4">
-                        <Link href="/contact" className="inline-flex justify-center items-center gap-3 bg-nara-gold text-white px-8 py-4 rounded-sm font-bold tracking-widest hover:bg-white hover:text-nara-charcoal transition-colors">
-                            <Home size={18} />
-                            来場予約（矢田）
-                        </Link>
-                        <Link href="/subdivision" className="inline-flex justify-center items-center gap-3 bg-transparent border border-white/30 text-white px-8 py-4 rounded-sm font-bold tracking-widest hover:bg-white hover:text-nara-charcoal transition-colors">
-                            <MapPin size={18} />
-                            分譲地情報を見る
-                        </Link>
-                    </div>
-                </div>
-            </section>
+            {/* Spec Comparison: Logical Proof */}
+            <SpecComparison />
+
+            {/* CTA: Action */}
+            <LandSearchCTA />
+
         </div>
     );
 }

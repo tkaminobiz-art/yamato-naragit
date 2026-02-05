@@ -34,9 +34,7 @@ export function Header() {
     });
 
     const concepts = [
-        { name: "Concept A: Rationalism", path: "/concept/smart-rationalism", desc: "Logic & Math" },
-        { name: "Concept B: Lifestyle", path: "/concept/new-standard", desc: "New Standard" },
-        { name: "Concept C: Trust", path: "/concept/reliable-narrative", desc: "Reliable Narrative" },
+        { name: "プランA : Rationalism", path: "/concept/smart-rationalism", desc: "Logic & Math" },
     ];
 
     return (
@@ -102,8 +100,8 @@ export function Header() {
                                     href={c.path}
                                     onClick={() => setIsOpen(false)}
                                     className={`flex items-center justify-between p-3 rounded-sm transition-colors ${pathname === c.path
-                                            ? "bg-nara-charcoal text-white"
-                                            : "hover:bg-gray-100 text-gray-600"
+                                        ? "bg-nara-charcoal text-white"
+                                        : "hover:bg-gray-100 text-gray-600"
                                         }`}
                                 >
                                     <div className="text-left">
