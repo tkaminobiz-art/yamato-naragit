@@ -164,7 +164,7 @@ export default function SmartRationalismPage() {
                             { title: "BATHROOM", name: "TOTO Sazana", spec: "Hokkkarari Floor", icon: ShieldCheck },
                             { title: "INSULATION", name: "Aqua Foam", spec: "Blow-in Method", icon: ShieldCheck },
                         ].map((item, i) => (
-                            <div key={i} className="bg-white p-8 border border-gray-200 hover:border-nara-gold transition-colors group">
+                            <div key={item.title} className="bg-white p-8 border border-gray-200 hover:border-nara-gold transition-colors group">
                                 <div className="flex justify-between items-start mb-8">
                                     <span className="text-[10px] font-mono tracking-widest bg-gray-100 px-2 py-1">{item.title}</span>
                                     <item.icon className="w-5 h-5 text-gray-300 group-hover:text-nara-gold transition-colors" />
