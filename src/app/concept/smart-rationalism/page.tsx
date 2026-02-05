@@ -141,8 +141,6 @@ export default function SmartRationalismPage() {
                     </div>
                 </div>
             </section>
-
-            <Footer />
         </div>
     );
 }
