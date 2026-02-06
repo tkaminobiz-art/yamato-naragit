@@ -70,12 +70,21 @@ export default function SmartRationalismPage() {
                                 「駅からの距離」は、バスで埋まる。<br />
                                 だが、「隣家との距離」は金でしか買えない。
                             </p>
+                            import {SmartCalculator} from "@/components/SmartCalculator";
+
+                            // ... (existing imports)
+
+                            // ... (in Evidence I section)
                             <p className="text-gray-600 leading-relaxed mt-4 text-sm mt-4">
                                 50坪の整形地。南向き。
                                 都市部の狭小地で3000万円を土地だけに費やすか。
                                 ここで780万円で土地を手に入れ、残りを「城」に充てるか。
                                 論理的な正解は明白です。
                             </p>
+
+                            <div className="mt-12">
+                                <SmartCalculator />
+                            </div>
                         </div>
                         <div className="md:w-2/3 grid grid-cols-2 gap-2 h-[500px]">
                             <div className="relative bg-gray-100 col-span-2 md:col-span-1 border border-gray-200 p-8 flex flex-col justify-between">
