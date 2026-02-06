@@ -69,7 +69,7 @@ export function SmartCalculator() {
                         </div>
                         <div className="flex justify-between items-center p-4 border-b border-gray-100 bg-[#faf9f7]">
                             <div className="flex flex-col">
-                                <span className="text-[#8c8070] font-bold">矢田（Design K）で建てた場合</span>
+                                <span className="text-[#8c8070] font-bold">矢田（やまと不動産）で建てた場合</span>
                                 <span className="text-xs text-gray-500">建物は最高グレード。でも支払いは楽々。</span>
                             </div>
                             <span className="text-2xl font-bold text-[#4a4a4a]">{yataMonthly}万円/月</span>

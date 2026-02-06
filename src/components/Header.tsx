@@ -34,7 +34,7 @@ export function Header() {
     });
 
     const concepts = [
-        { name: "プランA : Rationalism", path: "/concept/smart-rationalism", desc: "Logic & Math" },
+        { name: "プランA : スマートチョイス", path: "/concept/smart-rationalism", desc: "土地780万+建物2280万の最適解" },
     ];
 
     return (

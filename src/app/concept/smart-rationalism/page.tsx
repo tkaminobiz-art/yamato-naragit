@@ -41,19 +41,18 @@ export default function SmartRationalismPage() {
                 </div>
             </section>
 
-            {/* CONCEPT: Resonating with "Budget vs Dream" Conflict */}
+            {/* CONCEPT: Yamato's Promise */}
             <section id="concept" className="py-24 px-6 bg-[#faf9f7]">
                 <div className="container mx-auto max-w-5xl">
                     <div className="text-center mb-16">
-                        <span className="block text-[#8c8070] text-sm tracking-widest mb-2 font-serif">CONCEPT</span>
-                        <h2 className="text-3xl font-medium text-[#4a4a4a] mb-8">「いい家」と「将来の安心」どちらを選びますか？</h2>
+                        <span className="block text-[#8c8070] text-sm tracking-widest mb-2 font-serif">YAMATO’S PROPOSAL</span>
+                        <h2 className="text-3xl font-medium text-[#4a4a4a] mb-8">「いい家」と「将来の安心」<br />やまと不動産なら、両方叶います。</h2>
                         <div className="w-12 h-[1px] bg-[#8c8070] mx-auto mb-8"></div>
                         <p className="leading-8 text-gray-600 max-w-2xl mx-auto">
                             「素敵な家に住みたい」という憧れと、<br />
                             「ローンは大丈夫かな？」という不安。<br /><br />
-                            多くの方が、この板挟みで悩まれています。<br />
-                            もし、駅から少し離れた「矢田」を選ぶだけで、<br />
-                            その両方が手に入るとしたらどうでしょう？
+                            地元・奈良で長年家づくりに携わってきた私たちだからこそ、<br />
+                            その両方を解決する「矢田」という答えにたどり着きました。
                         </p>
                     </div>
 
@@ -78,9 +77,9 @@ export default function SmartRationalismPage() {
                             </div>
                             <h3 className="text-lg font-bold text-[#4a4a4a] mb-2">建物：2,280万円（高品質）</h3>
                             <p className="text-sm text-gray-500">
-                                妥協しない家づくり。<br />
+                                やまと不動産の標準仕様。<br />
                                 耐震等級3・制震ダンパー標準。<br />
-                                家族を地震から守る安心の性能。
+                                地震大国に住む家族の安心を守ります。
                             </p>
                         </div>
                     </div>
