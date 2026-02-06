@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Check, ArrowRight, MapPin, Database, ShieldCheck, ChefHat, Ruler } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { SmartCalculator } from "@/components/SmartCalculator";
 
 export default function SmartRationalismPage() {
     const { scrollYProgress } = useScroll();
@@ -70,11 +71,7 @@ export default function SmartRationalismPage() {
                                 「駅からの距離」は、バスで埋まる。<br />
                                 だが、「隣家との距離」は金でしか買えない。
                             </p>
-                            import {SmartCalculator} from "@/components/SmartCalculator";
 
-                            // ... (existing imports)
-
-                            // ... (in Evidence I section)
                             <p className="text-gray-600 leading-relaxed mt-4 text-sm mt-4">
                                 50坪の整形地。南向き。
                                 都市部の狭小地で3000万円を土地だけに費やすか。
