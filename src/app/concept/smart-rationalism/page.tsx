@@ -23,53 +23,65 @@ export default function SmartRationalismPage() {
                 />
                 <div className="absolute inset-0 bg-white/20"></div>
 
-                <div className="relative z-10 text-center bg-white/90 backdrop-blur-sm p-8 md:p-16 max-w-2xl mx-4 shadow-sm">
+                <div className="relative z-10 text-center bg-white/95 backdrop-blur-md p-8 md:p-16 max-w-2xl mx-4 shadow-sm rounded-sm">
                     <p className="text-[#8c8070] font-medium tracking-widest mb-4">奈良・矢田で叶える、理想の暮らし</p>
                     <h1 className="text-3xl md:text-5xl font-serif font-medium leading-relaxed mb-6 text-[#4a4a4a]">
-                        3,060万円で、<br />
-                        すべてを手に入れる。
+                        我慢もしない。<br />
+                        無理もしない。<br />
+                        <span className="text-2xl md:text-3xl block mt-4 text-[#8c8070]">それが、私たち家族の答えでした。</span>
                     </h1>
                     <p className="text-gray-600 leading-8 mb-8">
-                        土地も、建物も、未来のゆとりも。<br />
-                        賢い選択をする家族に贈る、新しい家づくりのカタチ。
+                        広いキッチンも、明るいリビングも、将来の教育費も。<br />
+                        何かを諦めるのではなく、「場所」を変えるだけで<br />
+                        すべてが叶うことに気づきました。
                     </p>
-                    <Link href="#concept" className="inline-block border border-[#8c8070] text-[#8c8070] px-8 py-3 hover:bg-[#8c8070] hover:text-white transition-colors">
-                        コンセプトを見る
+                    <Link href="#concept" className="inline-block border border-[#8c8070] text-[#8c8070] px-8 py-3 hover:bg-[#8c8070] hover:text-white transition-colors rounded-full">
+                        3,060万円の理由を知る
                     </Link>
                 </div>
             </section>
 
-            {/* CONCEPT: The Logic (Gently Explained) */}
+            {/* CONCEPT: Resonating with "Budget vs Dream" Conflict */}
             <section id="concept" className="py-24 px-6 bg-[#faf9f7]">
                 <div className="container mx-auto max-w-5xl">
                     <div className="text-center mb-16">
                         <span className="block text-[#8c8070] text-sm tracking-widest mb-2 font-serif">CONCEPT</span>
-                        <h2 className="text-3xl font-medium text-[#4a4a4a] mb-8">なぜ、3,060万円なのか？</h2>
+                        <h2 className="text-3xl font-medium text-[#4a4a4a] mb-8">「いい家」と「将来の安心」どちらを選びますか？</h2>
                         <div className="w-12 h-[1px] bg-[#8c8070] mx-auto mb-8"></div>
                         <p className="leading-8 text-gray-600 max-w-2xl mx-auto">
-                            家づくりにおいて、本当に大切なのは「見栄」でしょうか、それとも「実質」でしょうか。<br />
-                            私たちは、駅から少し離れた「矢田」という土地を選ぶことで、<br />
-                            土地価格を抑え、その分を「建物の品質」と「将来の貯蓄」に回す提案をしています。
+                            「素敵な家に住みたい」という憧れと、<br />
+                            「ローンは大丈夫かな？」という不安。<br /><br />
+                            多くの方が、この板挟みで悩まれています。<br />
+                            もし、駅から少し離れた「矢田」を選ぶだけで、<br />
+                            その両方が手に入るとしたらどうでしょう？
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center bg-white p-12 shadow-sm rounded-sm">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center bg-white p-12 shadow-sm rounded-lg">
                         <div className="flex flex-col items-center">
                             <div className="w-16 h-16 bg-[#f0eee9] rounded-full flex items-center justify-center mb-4 text-[#8c8070]">
                                 <MapPin size={24} />
                             </div>
-                            <h3 className="text-lg font-bold text-[#4a4a4a] mb-2">土地：780万円</h3>
-                            <p className="text-sm text-gray-500">50坪の広々とした敷地。<br />駐車スペースも庭も余裕です。</p>
+                            <h3 className="text-lg font-bold text-[#4a4a4a] mb-2">土地：780万円（矢田）</h3>
+                            <p className="text-sm text-gray-500">
+                                少し不便かもしれません。<br />
+                                でも、車があれば5分で生活圏。<br />
+                                浮いた予算は、家族の未来へ。
+                            </p>
                         </div>
                         <div className="flex items-center justify-center">
-                            <span className="text-2xl text-[#d4d4d4]">+</span>
+                            <span className="text-2xl text-[#d4d4d4] hidden md:block">+</span>
                         </div>
                         <div className="flex flex-col items-center">
                             <div className="w-16 h-16 bg-[#f0eee9] rounded-full flex items-center justify-center mb-4 text-[#8c8070]">
                                 <Home size={24} />
                             </div>
-                            <h3 className="text-lg font-bold text-[#4a4a4a] mb-2">建物：2,280万円</h3>
-                            <p className="text-sm text-gray-500">耐震等級3・制震ダンパー標準搭載。<br />家族を守る高性能住宅。</p>
+                            <h3 className="text-lg font-bold text-[#4a4a4a] mb-2">建物：2,280万円（高品質）</h3>
+                            <p className="text-sm text-gray-500">
+                                妥協しない家づくり。<br />
+                                耐震等級3・制震ダンパー標準。<br />
+                                家族を地震から守る安心の性能。
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -91,7 +103,7 @@ export default function SmartRationalismPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Image 1: Living */}
                         <div className="group cursor-pointer">
-                            <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-4">
+                            <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-4 rounded-sm">
                                 <Image
                                     src="https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&q=80"
                                     alt="明るいリビング"
@@ -105,7 +117,7 @@ export default function SmartRationalismPage() {
 
                         {/* Image 2: Kitchen */}
                         <div className="group cursor-pointer">
-                            <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-4">
+                            <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-4 rounded-sm">
                                 <Image
                                     src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80"
                                     alt="高機能キッチン"
@@ -119,7 +131,7 @@ export default function SmartRationalismPage() {
 
                         {/* Image 3: Exterior/Garden */}
                         <div className="group cursor-pointer">
-                            <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-4">
+                            <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-4 rounded-sm">
                                 <Image
                                     src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80"
                                     alt="外観と庭"

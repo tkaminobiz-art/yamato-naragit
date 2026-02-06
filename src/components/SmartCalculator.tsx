@@ -61,15 +61,24 @@ export function SmartCalculator() {
 
                     <div className="space-y-4">
                         <div className="flex justify-between items-center p-4 border-b border-gray-100">
-                            <span className="text-gray-600">駅近で建てた場合（月々）</span>
-                            <span className="text-xl font-medium text-gray-400">{stationMonthly}万円</span>
+                            <div className="flex flex-col">
+                                <span className="text-gray-600 font-bold">駅近エリアで建てた場合</span>
+                                <span className="text-xs text-gray-400">土地にお金がかかり、建物予算が削られるかも…</span>
+                            </div>
+                            <span className="text-xl font-medium text-gray-400">{stationMonthly}万円/月</span>
                         </div>
                         <div className="flex justify-between items-center p-4 border-b border-gray-100 bg-[#faf9f7]">
-                            <span className="text-gray-800 font-bold">矢田で建てた場合（月々）</span>
-                            <span className="text-2xl font-bold text-[#4a4a4a]">{yataMonthly}万円</span>
+                            <div className="flex flex-col">
+                                <span className="text-[#8c8070] font-bold">矢田（Design K）で建てた場合</span>
+                                <span className="text-xs text-gray-500">建物は最高グレード。でも支払いは楽々。</span>
+                            </div>
+                            <span className="text-2xl font-bold text-[#4a4a4a]">{yataMonthly}万円/月</span>
                         </div>
                         <div className="flex justify-between items-center p-4 bg-[#8c8070] text-white rounded-md mt-4 shadow-md">
-                            <span className="font-bold">月々の差額（貯蓄可能額）</span>
+                            <div className="flex flex-col">
+                                <span className="font-bold">毎月のゆとり（貯蓄へ）</span>
+                                <span className="text-xs opacity-90">今の家賃と比べてみてください</span>
+                            </div>
                             <span className="text-2xl font-bold">+{monthlyDiff.toFixed(1)}万円</span>
                         </div>
                     </div>
@@ -77,14 +86,14 @@ export function SmartCalculator() {
 
                 {/* Result Side */}
                 <div className="flex flex-col justify-center">
-                    <h3 className="text-center text-[#8c8070] font-bold mb-6 tracking-widest text-sm">35年間のメリット</h3>
+                    <h3 className="text-center text-[#8c8070] font-bold mb-6 tracking-widest text-sm">35年後、これだけの差になります</h3>
 
                     <div className="text-center mb-8">
-                        <span className="text-gray-500 text-sm block mb-1">トータル差額</span>
+                        <span className="text-gray-500 text-sm block mb-1">家族に残せるお金</span>
                         <span className="text-5xl font-bold text-[#4a4a4a]">
                             {totalDiff}<span className="text-lg ml-1 text-gray-500 font-normal">万円</span>
                         </span>
-                        <p className="text-xs text-gray-400 mt-2">※金利0.6%・35年返済で試算</p>
+                        <p className="text-xs text-gray-400 mt-2">これは単なる節約ではありません。「安心」の総額です。</p>
                     </div>
 
                     <div className="space-y-4">
@@ -93,18 +102,18 @@ export function SmartCalculator() {
                                 <GraduationCap size={20} />
                             </div>
                             <div>
-                                <h4 className="font-bold text-[#4a4a4a]">お子様の教育費</h4>
-                                <p className="text-xs text-gray-500">私立理系大学 4年間の学費相当</p>
+                                <h4 className="font-bold text-[#4a4a4a]">お子様の未来のために</h4>
+                                <p className="text-xs text-gray-500">奨学金に頼らず、大学まで行かせてあげられる安心。</p>
                             </div>
                         </div>
 
                         <div className={`flex items-center gap-4 p-4 rounded-lg border transition-all ${totalDiff > 800 ? "border-[#8c8070] bg-[#fffcf5]" : "border-gray-100 opacity-50"}`}>
                             <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#8c8070] border border-[#f0eee9]">
-                                <Car size={20} />
+                                <PiggyBank size={20} />
                             </div>
                             <div>
-                                <h4 className="font-bold text-[#4a4a4a]">車の買い替え</h4>
-                                <p className="text-xs text-gray-500">7年ごとに新車へグレードアップ</p>
+                                <h4 className="font-bold text-[#4a4a4a]">老後のゆとりのために</h4>
+                                <p className="text-xs text-gray-500">退職後の生活費や、夫婦での旅行費用として。</p>
                             </div>
                         </div>
                     </div>
